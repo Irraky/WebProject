@@ -1,0 +1,15 @@
+
+<script type="text/javascript">
+	
+	let truc = fetch('https://api.jsonbin.io/b/5ed625db60775a568586a881?key=$2b$10$VxJWCEArV9HcEk4DMwibI.ny2RB7rp2GGviF7v71kQyAELAOevhQ6', {
+            method: 'get',
+            "secret-key": "$2b$10$VxJWCEArV9HcEk4DMwibI.ny2RB7rp2GGviF7v71kQyAELAOevhQ6"
+
+            })
+            .then(response => response.json())
+            .then(function(response) {
+            	console.log(response);
+                return response;
+            })
+      console.log(truc);
+</script>
