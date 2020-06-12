@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>GAMES</title>
+    <script type="text/javascript" language="javascript" src="db.json"></script>
+    <style type="text/css">
+    .hover_group:hover
+    {
+        opacity: 0.3;
+    }
+    .projectsvg 
+    { 
+    	border: 3px black solid;
+    	display: inline-block;
+        position: relative;
+        width: 40%; 
+        padding-bottom: 45%;
+        vertical-align: middle; 
+        margin: auto; 
+        overflow: hidden;
+    	
+    }
+    .projectsvg svg 
+    { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%;
+    }
+    .invisible {
+    	position: absolute !important;
+   		top: -9999px !important;
+   		left: -9999px !important;
+    }
+
+    .info {
+            font-size: 12px;
+            height: 50em;
+            width: 20em;
+            padding: 20px;
+            background-color: brown;
+            border: 2px black solid;
+            position: absolute;
+            top: 50px;
+            left: 750px;
+            text-align: center;
+            cursor: grab;
+     }
+    .picOfGame {
+            height: 250px;
+     }
+    </style>
+ </head>
+ <body>
+
+<div onmousedown="drag(this)"  class="info">
+        <button type=button onclick="closeDiv(this)">X</button>
+        Si un jeu vous fait de l'oeil, n'hésitez pas et cliquez dessus.<br>
+        Vous pourrez alors voir des informations supplémentaires.
+</div>
+
+<figure  id="image1" class="projectsvg">
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1536 2048" preserveAspectRatio="xMinYMin meet">
+    //set your background image
+<image  width="1536" height="2048" xlink:href="armoire.jpg">
+</image>
+	<polygon class="hover_group" points="653,1622,740,1615,738,1592,728,1554,779,1542,742,1473,671,1485,681,1537,636,1543,632,1579,647,1614" opacity="0"  target="_self" alt="UNO" onclick="infoFromAPI(this)" />
+    <polygon class="hover_group"  points="607,1536,619,1558,618,1620,292,1677,294,1603,291,1572,486,1542,488,1552" opacity="0" target="_self" alt="Tokaido" onclick="infoFromAPI(this)"/>
+    <polygon class="hover_group" points="485,1473,489,1541,291,1571,287,1499" opacity="0" target="_self" alt="Isle of Skye: From Chieftain to King" onclick="infoFromAPI(this)"/>
+    <polygon  class="hover_group" points="600,1626,599,1687,298,1744,292,1678" opacity="0" target="_self" alt="Blood Bowl: Death Zone" onclick="infoFromAPI(this)"/>
+    <polygon target="_self" alt="Gwent: Monsters and Scoia'tael" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="608,1457,618,1469,619,1537,493,1552,488,1477"/>
+    <polygon target="_self" alt="Zombicide" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="596,1765,606,1845,623,1885,623,1939,630,1947,645,1999,641,2045,309,2046,300,1817"/>
+    <polygon target="_self" alt="Mille Bornes" class="hover_group" opacity="0" points="821,1664,613,1700,602,1679,602,1626,618,1622,621,1554,608,1535,623,1528,621,1475,721,1452,741,1471,673,1486,684,1537,634,1541,634,1578,651,1619,736,1616,732,1554,776,1544,820,1612"/>
+    <polygon target="_self" alt="UNO" onclick="infoFromAPI(this)" class="hover_group" opacity="0"  points="908,1671,1041,1657,1015,1596,990,1582,900,1578,893,1609,883,1613,881,1634"/>
+    <polygon target="_self" alt="Blood Bowl: Death Zone" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="1009,1595,1157,1577,1162,1508,1143,1494,1143,1506,809,1550,739,1440,729,1452,815,1618,824,1630,874,1627,877,1609,889,1606,900,1576,992,1583"/>
+    <!--FROM JSON--><polygon target="_self" alt="Dune" onclick="infoFromJSON(this)" class="hover_group" opacity="0" points="775,1437,737,1441,808,1551,1143,1505,1147,1452,1136,1445,813,1495"/>
+    <polygon target="_self" alt="Risk" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="1148,1412,1140,1445,812,1494,775,1434,808,1430,827,1465"/>
+    <polygon target="_self" alt="Monopoly" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="809,1427,1161,1384,1161,1412,826,1464"/>
+    <!--FROM JSON--><polygon target="_self" alt="Smallworld" class="hover_group" opacity="0" onclick="infoFromJSON(this)" points="330,1409,647,1374,646,1344,637,1324,627,1352,329,1384"/>
+    <polygon target="_self" alt="Colt Express" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="577,1184,629,1286,629,1351,303,1387,303,1313,304,1199"/>
+    <polygon target="_self" alt="Takenoko" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="656,1160,919,1141,923,1071,830,1002,591,1018,589,1079"/>
+     <!--FROM JSON--><polygon target="_self" alt="Imaginarium" onclick="infoFromJSON(this)" class="hover_group" opacity="0" points="645,1239,911,1214,914,1146,653,1162,588,1085,579,1090,579,1155"/>
+    <polygon target="_self" alt="Dominion: Intrigue" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="634,1310,911,1282,913,1224,907,1214,646,1237,581,1156,576,1182,630,1288"/>
+    <polygon target="_self" alt="Camel Up" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="649,1378,927,1345,926,1280,914,1271,911,1283,656,1309,640,1313,640,1328,648,1350"/>
+    <polygon target="_self" alt="Ashes: Rise of the Phoenixborn" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="925,1166,1182,1141,1188,1081,1056,1015,862,1021,923,1074,921,1145,915,1156"/>
+    <polygon target="_self" alt="Trivial Pursuit: Genus Edition" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="938,1208,1167,1186,1173,1144,938,1167,914,1166,914,1195"/>
+    <!--FROM JSON--><polygon target="_self" alt="Cyber Strategia" onclick="infoFromJSON(this)" class="hover_group" opacity="0" points="1192,1192,1189,1247,923,1277,912,1263,911,1218,911,1195,934,1207,1170,1186,1177,1178"/>
+    <polygon target="_self" alt="Champions of Midgard" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="933,1280,930,1341,1176,1307,1177,1248"/>
+    <polygon target="_self" alt="Smash Up" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="536,712,550,792,351,841,347,823,362,819,355,795,328,791,297,788,282,792,271,807,289,823,301,829,275,846,261,839,259,765,259,749,499,700"/>
+    <polygon target="_self" alt="Sack of Moustaches" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="268,947,314,954,348,951,379,946,376,868,370,845,347,837,348,817,359,815,353,793,294,787,280,798,273,803,279,815,302,828,281,838,273,856,265,867"/>
+    <polygon target="_self" alt="Liens de Sang" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="542,733,766,733,766,690,711,682,518,676,518,706,536,712"/>
+    <polygon target="_self" alt="Loony Quest" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="550,806,794,803,792,734,542,733,554,790"/>
+    <polygon target="_self" alt="Banana Matcho" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="513,872,774,872,773,805,509,807,474,814,482,849"/>
+    <polygon target="_self" alt="Les Loups-Garous de Thiercelieux" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="548,964,728,940,696,900,553,885,468,898,468,929"/>
+    <polygon target="_self" alt="Mr. Jack" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="789,934,904,929,902,899,792,895,778,884,775,922"/>
+    <polygon target="_self" alt="Nosferatu" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="801,696,883,691,884,658,767,656,763,685,769,693"/>
+    <polygon target="_self" alt="Paku Paku" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="796,743,908,737,906,691,885,694,802,697,767,693,767,730,792,733"/>
+    <polygon target="_self" alt="Brothers" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="937,795,938,740,916,733,794,744,792,798"/>
+    <polygon target="_self" alt="Bluffer" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="775,862,949,856,953,795,793,799,775,806"/>
+    <polygon target="_self" alt="Gloom" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="777,866,855,861,899,879,904,899,797,898,775,887"/>
+    <polygon target="_self" alt="Saboteur" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="1041,927,1068,936,1258,924,1260,895,1172,901,1083,878,1011,878,1041,894"/>
+    <polygon target="_self" alt="Age of War" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="914,935,1043,932,1037,896,991,875,900,869,903,901,902,928"/>
+    <polygon target="_self" alt="Skip-Bo" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="1098,841,1177,864,1265,861,1268,838,1177,816,1096,820"/>
+    <polygon target="_self" alt="Mascarade" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="1083,844,1093,837,1169,865,1279,860,1275,901,1169,901,1082,879"/>
+    <polygon target="_self" alt="Magic: The Gathering" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="239,447,315,449,322,329,234,317"/>
+    <polygon target="_self" alt="Final Fantasy Trading Card Game" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="566,480,667,482,663,346,570,335,561,352"/>
+    <!--FROM JSON--><polygon target="_self" alt="Elixir" class="hover_group" opacity="0" onclick="infoFromJSON(this)" points="1011,751,1078,758,1112,759,1167,762,1170,735,1094,728,1011,732"/>
+    <polygon target="_self" alt="Welcome Back to the Dungeon" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="1011,783,1068,794,1147,796,1150,762,1072,758,1009,749"/>
+    <polygon target="_self" alt="Dobble" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="995,714,991,733,1090,725,1125,728,1128,714"/>
+    <polygon target="_self" alt="Illuminati" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="1003,781,1085,797,1155,792,1165,802,1169,811,1097,819,1091,838,1077,840,1002,816"/>
+    <polygon target="_self" alt="Warhammer Quest: Shadows Over Hammerhal" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="516,875,778,874,774,924,722,923,699,899,526,883,500,889,481,849"/>
+    <polygon target="_self" alt="Carcassonne: Star Wars" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="379,932,469,929,469,897,483,889,484,853,472,813,363,838,374,848,375,862,378,905"/>
+    
+
+    <polygon target="_self" alt="Lays" class="hover_group" opacity="0" href="https://www.vide.org/" points="1162,1924,1177,1711,1150,1660,797,1725,755,1791,747,1804,739,1960,752,2036,967,1992,967,1969,1162,1932"/>
+    
+
+    <!--SPECIAL ITEM--><polygon target="_self" alt="Boites à Dés" class="hover_group" opacity="0"onclick="infoFromJSON(this)" points="865,495,1022,503,1026,449,987,436,967,445,927,435,911,443,902,434,859,430,857,481"/>
+    <polygon target="_self" alt="Twix" class="hover_group" opacity="0" href="https://www.youtube.com/watch?v=VOyrsZ2uTBo" points="625,114,873,178,858,259,668,233,599,244,558,233,569,130,610,114,623,118,625,114"/>
+    
+
+    <polygon target="_self" alt="Yu-Gi-Oh! Trading Card Game" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="599,1766,797,1722,748,1801,741,1992,729,2026,707,2047,645,2042,649,2008,634,1951,626,1938,627,1889,603,1843"/>
+
+</svg>
+</figure>
+
+
+<figure  class="invisible" class="projectsvg" id="image2">	
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 1536" preserveAspectRatio="xMinYMin meet">
+    //set your background image
+<image  width="2048" height="1536" xlink:href="armoire2.jpg">
+</image>
+</svg>
+</figure>
+
+
+<figure  class="invisible" class="projectsvg" id="image3">	
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 1536" preserveAspectRatio="xMinYMin meet">
+    //set your background image
+<image width="2048" height="1536" xlink:href="armoire3.jpg">
+</image>
+</svg>
+</figure>
+
+
+<figure  class="invisible" class="projectsvg" id="image4">	
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1072 1920" preserveAspectRatio="xMinYMin meet">
+    //set your background image
+<image width="1072" height="1920" xlink:href="armoire4.jpg">
+</image>
+</svg>
+
+</figure>
+<button onclick="next()">NEXT</button>
+<button onclick="prev()">PREV</button>
+ </body>
+
+ <script type="text/javascript">
+ 	var curr = 1;
+
+ 	function next() {
+ 		var img = document.getElementById("image" + curr);
+ 		var img2;
+ 		if (curr != 4) {
+ 			img2 = document.getElementById("image" + (curr + 1));
+ 			curr++;
+ 		}
+ 		else {
+ 			img2 = document.getElementById("image" + 1);
+ 			curr = 1;
+ 		}
+ 		img.classList.add("invisible");
+ 		img.classList.remove("projectsvg");
+ 		img2.classList.remove("invisible");
+ 		img2.classList.add("projectsvg");
+ 	}
+ 	function prev() {
+ 		var img = document.getElementById("image" + curr);
+ 		var img2;
+ 		if (curr != 1) {
+ 			img2 = document.getElementById("image" + (curr - 1));
+ 			curr--;
+ 		}
+ 		else {
+ 			img2 = document.getElementById("image" + 4);
+ 			curr = 4;
+ 		}
+ 		img.classList.add("invisible");
+ 		img.classList.remove("projectsvg");
+ 		img2.classList.remove("invisible");
+ 		img2.classList.add("projectsvg");
+ 	}
+
+ 	console.log(games);
+ function addDivOfGame(name, time, maxPlayer, minPlayer, image, age, category) {
+  var newDiv = document.createElement("div");
+  var button = document.createElement("button");
+  button.innerText = "X";
+  button.onclick = function(){ closeDiv(this); };
+  newDiv.appendChild(button);
+  // et lui donne un peu de contenu
+  var gameName = document.createTextNode(name);
+  // ajoute le nœud texte au nouveau div créé
+  newDiv.appendChild(gameName);
+  if (image) {
+    var img = document.createElement("img");
+    img.src = image;
+    newDiv.appendChild(img);
+    img.classList.add("picOfGame");
+  }
+  if (category) {
+  newContent = document.createTextNode('Catégorie: ' + category);
+  // ajoute le nœud texte au nouveau div créé
+  newDiv.appendChild(newContent);
+  }
+  if (time) {
+  newContent = document.createTextNode('Temps de jeu: ' + time);
+  // ajoute le nœud texte au nouveau div créé
+  newDiv.appendChild(newContent);
+  }
+  if (maxPlayer) {
+  if (maxPlayer != minPlayer)
+    newContent = document.createTextNode('De ' + minPlayer + " à " + maxPlayer + "joueurs");
+  else
+    newContent = document.createTextNode('Pour' + minPlayer + "joueurs");
+  // ajoute le nœud texte au nouveau div créé
+  newDiv.appendChild(newContent);
+  }
+  if (age) {
+  newContent = document.createTextNode('Age: ' + age);
+  // ajoute le nœud texte au nouveau div créé
+  newDiv.appendChild(newContent);
+  }
+
+  newDiv.id = name;  
+  newDiv.classList.add("info");
+  // add to DOM
+  var currentDiv = document.getElementById('slider');
+  document.body.insertBefore(newDiv, currentDiv);
+  // div draggable
+  newDiv.onmousedown= function() { drag(this); }
+  return newDiv;
+  
+}
+
+
+    function addInfoAndCreate(name, time, maxPlayer, minPlayer, img, age, category) {
+        console.log(time);
+        console.log(img);
+        var div = addDivOfGame(name, time, maxPlayer, minPlayer, img, age, category);
+        var game;
+        games.forEach(element => {
+            if (name == element.Dénomination) {
+                console.log(element)
+                game = element;
+            }
+        })
+
+    }
+    function infoFromJSON(el) {
+        console.log(el);
+        if (document.getElementById(el.attributes.alt.value) != null) {
+            return;
+        }
+        var game;
+        games.forEach(element => {
+            if (el.attributes.alt.value == element.Dénomination) {
+                console.log(element)
+                game = element;
+            }
+        })
+        addInfoAndCreate(el.alt, game.Durée, game.Max_joueur, game.Min_joueur, el.alt + ".png", game.age, game.category);
+    }
+    /// GET DATA of THE GAME FROM API AND DISPLAY IN DIV
+    /// el is my polygon
+    function infoFromAPI(el) {
+    	console.log("here");
+        if (document.getElementById(el.attributes.alt.value) != null)
+            return;
+        console.log(el);
+        var game = el.attributes.alt.value; /// alt of the polygon equal to the name of the game in the api
+        // proxy to bypass security of the API
+        var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+        targetUrl = 'https://www.boardgamegeek.com/xmlapi/search?search=',
+        targetUrl2 = 'https://www.boardgamegeek.com/xmlapi/boardgame/'
+        // fetch url of the game name
+        fetch(proxyUrl + targetUrl + game)
+        .then(data => {
+            console.log(data);
+            // we get an array of result with games containing the name passed
+            return data.text();
+        })
+        .then(function(data) {
+            // parse as xml file
+            let parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(data, 'text/xml');
+            console.log(xmlDoc);
+            // get the id of our game (we keep the first of the array)
+            let id = xmlDoc.getElementsByTagName('boardgame')[0].attributes[0].value;
+            let array = xmlDoc.getElementsByTagName('boardgame');
+            /// search a game with the exact same name as in alt
+            for (let i = 0; i < array.length; i++) {
+                // if exact same name, take this id
+                if (array[i].children[0].innerHTML.localeCompare(game) == 0) {
+                    id = array[i].attributes[0].value;
+                    break;
+                }
+            }
+            console.log(array);
+            // fetch url with id of our game
+            return fetch(proxyUrl + targetUrl2 + id);
+            })
+        .then(resp => {
+            return resp.text();
+        })
+        .then(function(data) {
+            // parse as xml
+            let parser = new DOMParser()
+            xmlDoc = parser.parseFromString(data, 'text/xml');
+            console.log(xmlDoc);
+            // here we have our data (img, players, time, ...)
+            // we create the div with those info
+            var data = xmlDoc.getElementsByTagName('boardgame')[0];
+            console.log("DATA" + data.children[1].innerHTML);
+            var age = data.getElementsByTagName('age')[0].innerHTML;
+            var time;
+            if (data.getElementsByTagName('minplaytime')[0].innerHTML != data.getElementsByTagName('maxplaytime')[0].innerHTML)
+                time = "de " + data.getElementsByTagName('minplaytime')[0].innerHTML + " à " + data.getElementsByTagName('maxplaytime')[0].innerHTML + "min";
+            else
+                time = "~" + data.getElementsByTagName('minplaytime')[0].innerHTML + "min";
+            var minplayers = data.getElementsByTagName('minplayers')[0].innerHTML;
+            var maxplayers = data.getElementsByTagName('maxplayers')[0].innerHTML;
+            var image = data.getElementsByTagName('image')[0].innerHTML;
+            var category = data.getElementsByTagName('boardgamecategory')[0].innerHTML;
+            addInfoAndCreate(game , time, maxplayers, minplayers, image, age, category);
+            return xmlDoc;
+        })
+        .catch(error => {
+            console.log('Request failed', error);
+            return error;
+        });
+    }
+
+    /// close div when user click on cross icon
+    function closeDiv(el) {
+        el.parentElement.remove();
+    }
+
+    
+    var selected = null, // Object of the element to be moved
+    x_pos = 0, y_pos = 0, // Stores x & y coordinates of the mouse pointer
+    x_elem = 0, y_elem = 0; // Stores top, left values (edge) of the element
+
+// Will be called when user starts dragging an element
+function _drag_init(elem) {
+    // Store the object of the element which needs to be moved
+    selected = elem;
+    x_elem = x_pos - selected.offsetLeft;
+    y_elem = y_pos - selected.offsetTop;
+}
+
+// Will be called when user dragging an element
+function _move_elem(e) {
+    x_pos = document.all ? window.event.clientX : e.pageX;
+    y_pos = document.all ? window.event.clientY : e.pageY;
+    if (selected !== null) {
+        selected.style.left = (x_pos - x_elem) + 'px';
+        selected.style.top = (y_pos - y_elem) + 'px';
+    }
+}
+
+// Destroy the object when we are done
+function _destroy() {
+    selected = null;
+}
+
+// Bind the functions...
+function drag (el) {
+    _drag_init(el);
+    return false;
+};
+
+document.onmousemove = _move_elem;
+document.onmouseup = _destroy;
+ </script>
