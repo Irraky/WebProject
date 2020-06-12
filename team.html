@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taverne du Troll - Team</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+    <style>
+    	h2 {
+    		font-size: 3vw;
+    	}
+    	h4 {
+    		font-size: 2.5vw;
+    	}
+    	a {
+    		font-size: 12px;
+    		color: #5B3C11;
+    	}
+    	
+    	.team {
+    		background-image: url("planche8b.jpg"); /*#DEB887;*/
+    		border: 1px solid #5B3C11;
+    		margin-top: 20px;
+    		/*width: 90%;*/
+    		margin-left: 30px;
+  			margin-right: 30px;
+    	}
+
+    	.headMembers {
+			display: flex;
+    	}
+
+      .headMembers h2{
+        display: inline;
+        padding-left: 10px;
+      }
+
+    	.members {
+    		justify-content: center;
+    		display: flex;
+    		flex-flow: row wrap;
+    		margin-top: 20px;
+    	}
+    	.member {
+    		background: #AE8867;
+    		border: 1px dashed brown;
+    		margin: 20px;
+    		padding: 10px;
+    		width: 150px;
+    		text-align: center;
+    	}
+    	.images	 {
+			background-size: cover;
+			width: 120px;
+			height : 120px;
+			margin: auto;
+			margin-top : 30px;
+			margin-bottom: 20px;
+			-webkit-border-radius:100%;
+	      	-moz-border-radius:100%;
+	      	-o-border-radius:100%;
+	      	border-radius : 100%;
+			box-shadow: 8px 8px 8px black;
+		}
+
+		#passation {
+			width: 50%;
+			left: 50%; /* à 50% du parent référent */
+  			transform: translate(50%, 0%); /* décalage de 50% de sa propre taille */
+    		margin-top: 50px;
+        margin-bottom: 20px;
+		}
+
+		.arrow {
+			width: 3.5vw;
+			height: 3.5vw;
+			margin: auto;
+			margin-right: 20px;
+			background-size: cover;
+			background-color: transparent;
+			background-image: url('arrow_down.png');
+
+		}
+
+		.fadein, .fadeout {
+    		opacity: 0;
+    		max-height: 0px;
+    		overflow-y: hidden;
+    		-moz-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+    		-o-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+   			-webkit-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+    		transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+		}
+
+		.fadein {
+    		opacity: 1;
+    		max-height: 100%;
+		}
+
+    #sound{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <header>
+        
+        <div class="title">
+          <img id="logo" class="headers" src="logo-taverne.png" />
+          <a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
+          <img id="logo" class="headers" src="logo-taverne.png" />
+        </div>
+        
+    </header>
+    <main>
+      <div id="selection">
+        <img src="pancarte.png" id="pancarte1">
+        <a href='jeux.html' id="pano1">Nos jeux</a>
+        <img src="pancarte.png" id="pancarte2">
+        <a href='taverne.html' id="pano2">Armoire</a>
+        <img src="pancarte.png" id="pancarte3">
+        <a href='partenaire.html' id="pb1">Être membre</a>
+        <img src="pancarte.png" id="pancarte4">
+        <a href='évènement.html' id="pb2">Nos évènements</a>
+      </div>
+      <div id="reste">
+
+        <div class="team">
+          
+          <div class="headMembers">
+            <h2>L'équipe de La Taverne du Troll</h2>
+            <button id="btn1" class="arrow" onclick="reverseVisibility('btn1')"></button>
+          </div>
+          
+          <div id="wrap1" class="fadeout">
+            <h4>Le bureau restreint</h4>
+            <div class="members">
+              <a href="https://www.linkedin.com/in/camille-mathieu-890374171/">
+                <div class="member">
+                  <div style="background-image:url(prez.png);" class="images"></div>
+                  <p>Camille MATTHIEU<br>Présidente</p>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/florent-cotton-8115b6176/">
+                <div class="member">
+                  <div style="background-image:url(vice_prez.jpg);" class="images"></div>
+                  <p>Florent COTTON<br>Vice-président</p>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/romane-thoirey/">
+                <div class="member">
+                  <div style="background-image:url(treso.jpg);" class="images"></div>
+                  <p>Romane THOIREY<br>Trésorière</p>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/d%C3%A9borah-recours%C3%A9/">
+                <div class="member">
+                  <div style="background-image:url(vice_treso.jpg);" class="images"></div>
+                  <p>Déborah RECOURSÉ<br>Vice-trésorière</p>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/jonathan-witt-270b8817a/">
+                <div class="member">
+                  <div style="background-image:url(secretaire.jpg);" class="images"></div>
+                  <p>Jonathan WITT<br>Secrétaire</p>
+                </div>
+              </a>
+            </div>
+            <h4>Les responsables (bureau étendu)</h4>
+            <div class="members">
+              <p>
+                Responsable Jeux de société : Arnaud PIGNEROL<br>
+                Responsable Jeux de cartes: Simon GOMBERT<br>
+                Responsable Jeux de rôles: Zenon TALEUX<br>
+                Responsable Jeux de figurines: Killian ZHOU<br>
+                <br>
+                Responsable Communication: Timothé CHAUVET<br>
+                Responsable Partenariats: Florent COTTON<br>
+                Responsable Evénements: Jonathan WITT
+              </p>
+            </div>
+          
+          </div>
+        </div>
+        
+        <div class="team">
+          <div class="headMembers">
+            <h2>Les développeurs du site</h2>
+            <button id="btn2" class="arrow" onclick="reverseVisibility('btn2')"></button>
+          </div>
+          <div id="wrap2" class="fadeout">
+            <div class="members">
+              <div class="member">
+                <div style="background-image:url(vice_treso.jpg);" class="images"></div>
+                <p>Déborah RECOURSÉ</p>
+              </div>
+              <div class="member">
+                <div style="background-image:url(secretaire.jpg);" class="images"></div>
+                <p>Jonathan WITT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <img src="passation.jpeg" id="passation" />
+        <div id="sound">
+          <audio controls loop>
+            <source src="sound.mp3" type="audio/mp3">
+          </audio>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="rs">
+        <h3>Réseaux sociaux</h3>    
+        <button type="button" onclick="window.location.href='https://www.facebook.com/EfreiTaverneduTroll'" id="fb"></button>
+        <button type="button" onclick="window.location.href='https://instagram.com/efreitavernedutroll?igshid=obdazlz3nkis'" id="insta"></button>
+        <button type="button" onclick="window.location.href='https://discord.gg/sG4hUpN'" id="discord"></button>
+      </div>
+      <a href="./team.html" id="info">Qui sommes-nous ?</a>
+      
+    </footer>
+  
+  </body>
+</html>
+
+<script type="text/javascript">
+	var map = {
+		'btn1': 'wrap1',
+		'btn2': 'wrap2'
+	}
+
+	function reverseVisibility(elem) {
+		let button = document.getElementById(elem);
+		let myDiv = document.getElementById(map[elem]);
+		if (myDiv.classList.contains("fadeout")) {
+			myDiv.classList.remove("fadeout");
+			myDiv.classList.add("fadein");
+			button.style.backgroundImage = "url('arrow_up.png')";
+			button.style.backgroundColor = 'transparent';
+		}
+		else {
+			myDiv.classList.remove("fadein");
+			myDiv.classList.add("fadeout");
+			button.style.backgroundImage = "url('arrow_down.png')";
+			button.style.backgroundColor = 'transparent';
+		}
+	}
+
+  let menu_state=0;
+  function show_menu()
+  {
+    if(menu_state==0)
+    {
+      document.getElementById("selection").style.display = 'flex';
+      menu_state=1;
+    }
+    else
+    {
+      document.getElementById("selection").style.display = 'none';
+      menu_state=0;
+    }  
+  }
+
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Taverne du Troll</title>
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		
+		<style type="text/css">
+			
+
+		</style>
+	</head>
+	<body>
+		<header>
+				
+				<div class="title">
+					<img id="logo" class="headers" src="logo-taverne.png" />
+					<a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
+					<img id="logo" class="headers" src="logo-taverne.png" />
+				</div>
+				
+		</header>
+		<main>
+			<div id="selection">
+				<img src="pancarte.png" id="pancarte1">
+				<a href='jeux.html' id="pano1">Nos jeux</a>
+				<img src="pancarte.png" id="pancarte2">
+				<a href='taverne.html' id="pano2">Armoire</a>
+				<img src="pancarte.png" id="pancarte3">
+				<a href='partenaire.html' id="pb1">Être membre</a>
+				<img src="pancarte.png" id="pancarte4">
+				<a href='évènement.html' id="pb2">Nos évènements</a>
+			</div>
+			<div id="reste">
+				
+			</div>
+		</main>
+		<footer>
+			<div id="rs">
+				<h3>Réseaux sociaux</h3>		
+				<button type="button" onclick="window.location.href='https://www.facebook.com/EfreiTaverneduTroll'" id="fb"></button>
+				<button type="button" onclick="window.location.href='https://instagram.com/efreitavernedutroll?igshid=obdazlz3nkis'" id="insta"></button>
+				<button type="button" onclick="window.location.href='https://discord.gg/sG4hUpN'" id="discord"></button>
+			</div>
+			<a href="./team.html" id="info">Qui sommes-nous ?</a>
+			
+		</footer>
+	</body>
+	<script type="text/javascript">
+		let menu_state=0;
+		function show_menu()
+		{
+			if(menu_state==0)
+			{
+				document.getElementById("selection").style.display = 'flex';
+				menu_state=1;
+			}
+			else
+			{
+				document.getElementById("selection").style.display = 'none';
+				menu_state=0;
+			}
+			
+		}
+
+	</script>
+	
+</html>

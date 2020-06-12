@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Taverne du Troll - Jeux</title>
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		<script type="text/javascript" language="javascript" src="db.json"></script>
+		<style type="text/css">
+			#title{
+				font-size: 4vw;
+				text-align: center;
+			}
+
+			form {
+				display: flex;
+				justify-content: space-around;
+			}
+
+			form h2{
+				padding-top: 2vw; 
+				font-size: 3vw;
+				padding-left: 3%;
+				display: inline;
+			}
+
+			form div{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			td {
+				text-align: center;
+				font-size: 2vw;
+			}
+
+			#gametable{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			#gametable h2{
+				font-size: 3vw;
+				padding-top: 2vw; 
+			}
+
+			#gametable button{
+				margin-top: 10px;
+				margin-right: 5px;
+				margin-left: 5px;
+				margin-bottom: 10px;
+				text-transform: uppercase;
+				border: none;
+				box-shadow: 1px 1px 1px grey;
+				padding: 5px;
+			}
+
+			#gametable button:hover{
+				background-color: lightgrey;
+				cursor: pointer;
+			}
+
+			th{
+				font-size: 3vw;
+			}
+
+			table{
+				padding-top: 8vw;
+				padding-bottom: 10vw;
+				padding-left: 8vw;
+				padding-right: 8vw;
+				background-image: url('parchemin.png');
+				background-size: 100% 100%;
+				color: black;
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+				
+				<div class="title">
+					<img id="logo" class="headers" src="logo-taverne.png" />
+					<a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
+					<img id="logo" class="headers" src="logo-taverne.png" />
+				</div>
+				
+		</header>
+		<main>
+			<div id="selection">
+				<img src="pancarte.png" id="pancarte1">
+				<a href='jeux.html' id="pano1">Nos jeux</a>
+				<img src="pancarte.png" id="pancarte2">
+				<a href='taverne.html' id="pano2">Armoire</a>
+				<img src="pancarte.png" id="pancarte3">
+				<a href='partenaire.html' id="pb1">Être membre</a>
+				<img src="pancarte.png" id="pancarte4">
+				<a href='évènement.html' id="pb2">Nos évènements</a>
+			</div>
+			<div id="reste">
+				<h2 id="title">A quoi qu'on joue ?</h2>
+				<form method="post" action="jeux.html">
+					<div>
+						<h2>Nombre de joueurs</h2>
+						<select name="nb_player" id="nb_player" onchange="change()">
+							<option value="-">--------</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="+10">10 ou plus</option>
+						</select>
+					</div>
+					<div>
+						<h2>Durée du jeu</h2>
+						<select name="duration" id="duration" onchange="change()">
+							<option value="-">--------</option>
+							<option value="30">moins de 30min</option>
+							<option value="45">30min à 45min</option>
+							<option value="1">45min à 1h</option>
+							<option value="2">plus d'1h</option>
+						</select>
+					</div>
+				</form>
+				<div id="gametable">
+			        <h2>Nos Jeux</h2>
+			        <table id="game">
+			            <tr>
+			                <th>Nom</th>
+			                <th>Nombre de joueurs</th>
+			                <th>Durée</th>
+			            </tr>
+			        </table>
+			        <nav>
+			        	<button id="previous" disabled onclick="previous()">Previous</button>
+					    <button id="next" onclick="next()">Next</button>
+					</nav>
+		        </div>
+				
+			</div>
+		</main>
+		<footer>
+			<div id="rs">
+				<h3>Réseaux sociaux</h3>		
+				<button type="button" onclick="window.location.href='https://www.facebook.com/EfreiTaverneduTroll'" id="fb"></button>
+				<button type="button" onclick="window.location.href='https://instagram.com/efreitavernedutroll?igshid=obdazlz3nkis'" id="insta"></button>
+				<button type="button" onclick="window.location.href='https://discord.gg/sG4hUpN'" id="discord"></button>
+			</div>
+			<a href="./team.html" id="info">Qui sommes-nous ?</a>
+			
+		</footer>
+	</body>
+	<script type="text/javascript">
+		var iteration=0;
+		let menu_state=0;
+		let global_add=0;
+		function show_menu()
+		{
+			if(menu_state==0)
+			{
+				document.getElementById("selection").style.display = 'flex';
+				menu_state=1;
+			}
+			else
+			{
+				document.getElementById("selection").style.display = 'none';
+				menu_state=0;
+			}
+			
+		}
+		function next()
+	    {
+	    	let length=get_length();
+	    		    	
+    		if(iteration == 0)
+	    	{
+	    		document.getElementById('previous').disabled = false;
+	    	}
+	    	if(iteration <length/10)
+	    	{
+	    		iteration++;
+	    		tout_supprimer();
+	    		GetGames();
+	    	}
+	    	if(iteration==(length/10)-1)
+	    	{
+	    		document.getElementById('next').disabled = true;
+	   		}
+	   		if(length <= 10)
+	    	{
+	    		document.getElementById('previous').disabled = true;
+	    		document.getElementById('next').disabled = true;
+	    	}
+
+	    	
+	    }
+
+	    function previous()
+	    {
+	    	let length=get_length();
+	    	
+    		if(iteration == (length/10)-1)
+	    	{
+	    		document.getElementById('next').disabled = false;
+	    	}
+	    	if(iteration >0)
+	    	{
+	    		tout_supprimer();
+	    		minus_global_add();
+	    		iteration--;
+	    		GetGames();
+	    	}
+	    	if(iteration==0)
+	    	{
+	    		document.getElementById('previous').disabled = true;
+	   		}
+	   		if(length <=10){
+	    		document.getElementById('previous').disabled = true;
+	    		document.getElementById('next').disabled = true;
+
+	    	}
+	    	
+	    }
+
+	    function CreateGames(nom,time,Max_nb,Min_nb)
+	    {
+	    	let tabel=document.getElementById('game');
+			let nw_1=document.createElement("td");
+			nw_1.textContent=nom;
+			let nw_2=document.createElement("td");
+			if(Min_nb!=Max_nb)
+			{nw_2.textContent=Min_nb+"-"+Max_nb;}
+			else
+				{nw_2.textContent=Min_nb;}
+			let nw_3=document.createElement("td");
+			nw_3.textContent=time;
+			let nw_line=document.createElement("tr");
+			nw_line.appendChild(nw_1);
+			nw_line.appendChild(nw_2);
+			nw_line.appendChild(nw_3);
+			tabel.appendChild(nw_line);
+	    }
+
+	    function GetGames()
+	    {
+	    	
+	    	length=get_length();
+	    	let nb=document.getElementById('nb_player');
+	    	let time=document.getElementById('duration');
+	    	var add=0;
+	    	var data = games;
+	    	if(iteration == (length/10)-1 || length <=10)
+	    	{
+	    		add = (-(10-length%10))%10;
+	    	}
+	    	console.log(length);
+	    	console.log(add);
+			for (var i = iteration*10+global_add; i <(iteration+1)*10+global_add+add; i++) {
+				if(data[i].Catégorie=="JdS" || data[i].Catégorie=="JdC"){
+	    			if(nb.value!="-")
+		    		{
+		    			if(nb.value <= data[i].Max_joueur && nb.value >= data[i].Min_joueur)
+		    			{
+		    				if(time.value!="-")
+		    				{
+		    					if(time.value == "30" && data[i].Durée == "-30min")
+		    					{
+		    						CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+		    					}
+		    					else
+		    					{
+		    						if(time.value == "45" && data[i].Durée == "30min à 45min")
+			    					{
+			    						CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+			    					}
+			    					else
+			    					{
+			    						if(time.value == "1" && data[i].Durée == "45min à 1h")
+				    					{
+				    						CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+				    					}
+				    					else
+				    					{
+				    						if(time.value == "2" && data[i].Durée == "+1h")
+					    					{
+					    						CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+					    					}
+					    					else
+					    					{
+					    						add++;
+					    					}
+				    					}
+				    					
+			    					}
+			    				}
+		    				}	
+		    				else
+		    				{
+		    					CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+		    				}
+			    		}
+			    		else
+			    		{
+			    			add++;
+			    		}
+		    		}
+		    		else
+		    		{
+		    			if(time.value!="-")
+	    				{
+	    					if(time.value == "30" && data[i].Durée == "-30min")
+	    					{
+	    						CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+	    					}
+	    					else
+	    					{
+	    						if(time.value == "45" && data[i].Durée == "30min à 45min")
+		    					{
+		    						CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+		    					}
+		    					else
+		    					{
+		    						if(time.value == "1" && data[i].Durée == "45min à 1h")
+			    					{
+			    						CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+			    					}
+			    					else
+			    					{
+			    						if(time.value == "2" && data[i].Durée == "+1h")
+				    					{
+				    						CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+				    					}
+				    					else
+				    					{
+				    						add++;
+				    					}
+			    					}
+			    					
+		    					}
+		    				}
+	    				}	
+	    				else
+	    				{
+	    					CreateGames(data[i].Dénomination,data[i].Durée,data[i].Max_joueur,data[i].Min_joueur);
+	    				}
+		    		}
+				}
+				else{
+					add++;
+				}
+			    
+			}
+			global_add+=add;
+	    }
+
+	    function tout_supprimer()
+	    {
+	    	let tabel=document.getElementById('game');
+		    	let length=tabel.rows.length;
+		    	for (var i = 1; i <length; i++) {
+		    		tabel.deleteRow(1);
+		    	}
+	    }
+
+	    function get_length()
+	    {
+	    	let nb=document.getElementById('nb_player');
+	    	let time=document.getElementById('duration');
+	    	var data = games;
+	    	let length=0;
+	    	for (var i = 0; i < 96; i++) {
+	    		if(data[i].Catégorie=="JdS" || data[i].Catégorie=="JdC"){
+	    			if(nb.value!="-")
+		    		{
+		    			if(nb.value <= data[i].Max_joueur && nb.value >= data[i].Min_joueur)
+		    			{
+		    				if(time.value!="-")
+		    				{
+		    					if(time.value == "30" && data[i].Durée == "-30min")
+		    					{
+		    						length++;
+		    					}
+		    					if(time.value == "45" && data[i].Durée == "30min à 45min")
+		    					{
+		    						console.log(data[i].Dénomination);
+		    						length++;
+		    					}
+		    					if(time.value == "1" && data[i].Durée == "45min à 1h")
+		    					{
+		    						length++;
+		    					}
+		    					if(time.value == "2" && data[i].Durée == "+1h")
+		    					{
+		    						length++;
+		    					}
+		    				}
+		    				else
+		    				{
+		    					length++;
+		    				}	
+		    			}
+		    		}
+		    		else
+		    		{
+		    			if(time.value!="-")
+	    				{
+	    					if(time.value == "30" && data[i].Durée == "-30min")
+	    					{
+	    						length++;
+	    					}
+	    					if(time.value == "45" && data[i].Durée == "30min à 45min")
+	    					{
+	    						length++;
+	    					}
+	    					if(time.value == "1" && data[i].Durée == "45min à 1h")
+	    					{
+	    						length++;
+	    					}
+	    					if(time.value == "2" && data[i].Durée == "+1h")
+	    					{
+	    						length++;
+	    					}
+	    				}
+	    				else
+	    				{
+	    					length++;
+	    				}
+		    		}
+	    		}
+	    		
+	    	}
+	    	return length;
+	    }
+
+	    function minus_global_add()
+	    {
+	    	length=get_length();
+	    	var add=0;
+	    	var data = games;
+	    	if(iteration == (length/10)-1)
+	    	{
+	    		add = -length%10;
+	    	}
+			for (var i = iteration*10+global_add+9; i > (iteration-1)*10+global_add-add; i--) {
+				if (data[i].Catégorie!="JdS" && data[i].Catégorie!="JdC") {
+					add++;
+				}
+			    
+			}
+			global_add-=add;
+	    }
+
+	    function change()
+	    {
+	    	var length=get_length();
+	    	iteration=0;
+	    	global_add=0;
+	    	tout_supprimer();
+	    	GetGames();
+	    	document.getElementById('previous').disabled = true;
+	    	if(length <=10){
+	    		document.getElementById('next').disabled = true;
+
+	    	}
+	    	else
+	    	{
+	    		document.getElementById('next').disabled = false;
+	    	}
+
+	    }
+
+	    GetGames();
+
+	</script>
+	
+</html>

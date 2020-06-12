@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Taverne du Troll</title>
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		
+		<style type="text/css">
+			.concept h2{
+				font-size: 4vw;
+				text-align: center;
+			}
+			.concept p{
+				font-size: 2.5vw;
+				padding-left: 5px;
+				padding-top: 10px;
+				text-align: center;
+			}
+
+			.concept{
+				margin-top: 3vw; 
+				display: flex;
+				flex-direction: column;
+				align-content: center;
+			}
+			.concept video{
+				align-self: center;
+				margin-top: 20px; 
+			}
+
+			.location{
+				display: flex;
+				flex-direction: column;
+			}
+
+			.location h2{
+				padding-top: 2vw; 
+				font-size: 3vw;
+				padding-left: 3%;
+			}
+			.location p{
+				font-size: 2.5vw;
+				padding-left: 1%;
+				padding-top: 10px;
+				padding-right: 1%;
+			  
+			}
+			.location img{
+				padding-left: 28%;
+				width: 70%;
+				height: auto;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+
+			.présentation{
+				margin-top: 30px;
+				display: flex;
+				justify-content: space-around;
+			}
+
+			.présentation img{
+				width: 8vw;
+				height: auto;
+				align-self: center;
+			}
+			.présentation p{
+				font-size: 2vw;
+				max-width: 12vw;
+				text-align: center;
+			}
+
+			.présentation div{
+				display: flex;
+				flex-direction: column;
+			}
+			#pré_title{
+				padding-top: 2vw; 
+				font-size: 3vw;
+				padding-left: 3%;
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+				
+				<div class="title">
+					<img id="logo" class="headers" src="logo-taverne.png" />
+					<a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
+					<img id="logo" class="headers" src="logo-taverne.png" />
+				</div>
+				
+		</header>
+		<main>
+			<div id="selection">
+				<img src="pancarte.png" id="pancarte1">
+				<a href='jeux.html' id="pano1">Nos jeux</a>
+				<img src="pancarte.png" id="pancarte2">
+				<a href='taverne.html' id="pano2">Armoire</a>
+				<img src="pancarte.png" id="pancarte3">
+				<a href='partenaire.html' id="pb1">Être membre</a>
+				<img src="pancarte.png" id="pancarte4">
+				<a href='évènement.html' id="pb2">Nos évènements</a>
+				
+			</div>
+			<div id="reste">
+				<div class="concept">
+					<h2>Bienvenue à la Taverne du Troll !!</h2>
+					<p>La <strong>Taverne du Troll</strong> est une association de jeux de société, jeux de cartes, jeux de rôles et jeux de figurines.</p>
+					<video width="60%" height="auto" controls>
+						<source src="VDA.mp4" type="video/mp4">
+					</video>
+				</div>
+				<h2 id="pré_title">La Taverne du Troll c'est quoi ?</h2>
+				<div class="présentation">
+					<div>
+						<img src="icone_jeux.png" />
+						<p>Une infinité de jeux pour un max de fun</p>
+					</div>
+					<div>
+						<img src="icone_calendrier.png" />
+						<p>Des évènements divers organisés régulièrement</p>
+					</div>
+					<div>
+						<img src="pomme.png" />
+						<p>Nous fournissons les pommes</p>
+					</div>
+				</div>
+				<div class="location">
+					<h2>Où et quand nous rejoindre ?</h2>
+					<p>Horaires : tous les jeudis de 10h à 18h hors vacances scolaires<br>Lieu : Efrei Paris, 30-32 Avenue de la République, Villejuif,  2è étage du Student Hub (SH)</p>
+					<img src="Efrei.png"/>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div id="rs">
+				<h3>Réseaux sociaux</h3>		
+				<button type="button" onclick="window.location.href='https://www.facebook.com/EfreiTaverneduTroll'" id="fb"></button>
+				<button type="button" onclick="window.location.href='https://instagram.com/efreitavernedutroll?igshid=obdazlz3nkis'" id="insta"></button>
+				<button type="button" onclick="window.location.href='https://discord.gg/sG4hUpN'" id="discord"></button>
+			</div>
+			<a href="./team.html" id="info">Qui sommes-nous ?</a>
+			
+		</footer>
+	</body>
+	<script type="text/javascript">
+
+	</script>
+	
+</html>

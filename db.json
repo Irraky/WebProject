@@ -390,7 +390,7 @@ var games = [
             "Quantité": "1",
             "Complet": "?",
             "Etat": "Bof",
-	    "Durée" : "+1h",
+	    "Durée" : "30min à 45min",
 	    "Max_joueur" : "4",
 	    "Min_joueur" : "2"
         },

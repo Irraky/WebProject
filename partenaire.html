@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Taverne du Troll-membre</title>
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		
+		<style type="text/css">
+			#inscription{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			#inscription h2{
+				font-size: 4vw;
+				margin-top: 40px;
+			}
+
+			#inscription a{
+				font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+			}
+
+			#carte{
+				display: flex;
+				justify-content: space-around;
+				flex-direction: row-reverse;
+				align-items: center;
+				margin-top: 40px;
+				padding: 3vw;
+				/*background-color: rgb(105,77,30);*/
+			}
+			#carte p{
+				width: 40%;
+				font-size: 2vw;
+				text-align: justify;
+				font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+			}
+
+
+			#starplayer{
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				padding: 3vw;
+				/*background-color: rgb(105,77,30);*/
+			}
+
+			#starplayer p{
+				max-width: 40%;
+				font-size: 2vw;
+				text-align: justify;
+				font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+			}
+
+			#treso
+			{
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-around;
+				align-items: center;
+				padding: 3vw;
+			}
+
+			#treso div{
+				display: flex;
+				flex-direction: column;
+				width: 40%;
+			}
+
+			#treso h4{
+				font-size: 3vw;
+			}
+
+			#treso p{
+				max-width: 100%;
+				font-size: 2vw;
+				text-align: justify;
+				font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+			}
+
+			#treso img{
+				width: 15%;
+			}
+
+			.promo{
+				width: 80%;
+				height: auto;
+				margin: 10px;
+			}
+
+			#img_p{
+				width: 30%;
+				height: auto;
+			}
+
+			#mag{
+				display: flex;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<header>
+				
+				<div class="title">
+					<img id="logo" class="headers" src="logo-taverne.png" />
+					<a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
+					<img id="logo" class="headers" src="logo-taverne.png" />
+				</div>
+				
+		</header>
+		<main>
+			<div id="selection">
+				<img src="pancarte.png" id="pancarte1">
+				<a href='jeux.html' id="pano1">Nos jeux</a>
+				<img src="pancarte.png" id="pancarte2">
+				<a href='taverne.html' id="pano2">Armoire</a>
+				<img src="pancarte.png" id="pancarte3">
+				<a href='partenaire.html' id="pb1">Être membre</a>
+				<img src="pancarte.png" id="pancarte4">
+				<a href='évènement.html' id="pb2">Nos évènements</a>
+			</div>
+			<div id="reste">
+				<div id="inscription">
+					<h2>Les avantages de la carte Taverne</h2>
+					<div id="carte">
+						<img src="carte.png" id="img_p"/>
+						<p>La carte Taverne fait de vous un vrai Troll. Elle vous donne accès aux différentes activités présentes à la Taverne du Troll. Des jeux, du fun, de la bonne humeur seront au rendez-vous pour chaque séance hebdomadaire. De plus, de nombreux évènements allant du tournoi de Yu Gi Oh à celui de Tarot en passant par le Perudo sont organisés.</p>
+					</div>
+					<div id="starplayer">
+						<img src="starplayer.jpg" id="img_p"/>
+						<p>Grâce à la carte Taverne, vous avez la possibilité d'acheter vos jeux 10% moins cher chez notre partenaire Starplayer. Starplayer est une boutique de jeu située au 16 rue Lagrange, 75005 Paris.<br /> Plus d'information sur <a href="https://www.starplayer.fr/">starplayer.fr</a></p>
+					</div>
+					<div id="carte">
+						<div id="mag">
+							<img class="promo" src="maj.jpg" />
+							<img src="fou.jpg">
+						</div>
+						<p>Vous pourrez également bénéficier de -10% à Majestik Games situé au 148 Avenue du Maine, 75014 Paris (<a href="https://www.majestikgames.com/fr/">majestikgames.com</a>), ainsi que de -10% chez Les Fous du Roy situé au 31 Rue du Général Leclerc, 78000 Versailles.</p>
+					</div>
+					<div id="starplayer">
+						<p></p>
+					</div>
+					<div id="treso">
+						<img src="treso.jpg" />
+						<div>
+							<h4>Comment devenir membre ?</h4>
+							<p>Rien de plus simple ! Il vous suffit d'aller à la rencontre de notre trésorière Romane Thoirey. Pour la modique somme de 5€, vous aurez accès à toutes les offres promotionnelles. De plus, vous gagnerez des points PAVE selon votre assiduité.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div id="rs">
+				<h3>Réseaux sociaux</h3>		
+				<button type="button" onclick="window.location.href='https://www.facebook.com/EfreiTaverneduTroll'" id="fb"></button>
+				<button type="button" onclick="window.location.href='https://instagram.com/efreitavernedutroll?igshid=obdazlz3nkis'" id="insta"></button>
+				<button type="button" onclick="window.location.href='https://discord.gg/sG4hUpN'" id="discord"></button>
+			</div>
+			<a href="./team.html" id="info">Qui sommes-nous ?</a>
+			
+		</footer>
+	</body>
+	<script type="text/javascript">
+		let menu_state=0;
+		function show_menu()
+		{
+			if(menu_state==0)
+			{
+				document.getElementById("selection").style.display = 'flex';
+				menu_state=1;
+			}
+			else
+			{
+				document.getElementById("selection").style.display = 'none';
+				menu_state=0;
+			}
+			
+		}
+
+	</script>
+	
+</html>
