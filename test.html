@@ -12,11 +12,10 @@
     }
     .projectsvg 
     { 
-    	border: 3px black solid;
     	display: inline-block;
         position: relative;
         width: 40%; 
-        padding-bottom: 45%;
+        padding-bottom: 55%;
         vertical-align: middle; 
         margin: auto; 
         overflow: hidden;
@@ -64,9 +63,8 @@
 <figure  id="image1" class="projectsvg">
 <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1536 2048" preserveAspectRatio="xMinYMin meet">
     //set your background image
-<image  width="1536" height="2048" xlink:href="armoire.jpg">
-</image>
-	<polygon class="hover_group" points="653,1622,740,1615,738,1592,728,1554,779,1542,742,1473,671,1485,681,1537,636,1543,632,1579,647,1614" opacity="0"  target="_self" alt="UNO" onclick="infoFromAPI(this)" />
+<image  width="1536" height="2048" xlink:href="armoire.jpg"></image>
+	<polygon class="hover_group" points="653,1622,740,1615,738,1592,728,1554,779,1542,742,1473,671,1485,681,1537,636,1543,632,1579,647,1614" opacity="0"  target="_self" alt="UNO" onclick="infoFromAPI(this)"/>
     <polygon class="hover_group"  points="607,1536,619,1558,618,1620,292,1677,294,1603,291,1572,486,1542,488,1552" opacity="0" target="_self" alt="Tokaido" onclick="infoFromAPI(this)"/>
     <polygon class="hover_group" points="485,1473,489,1541,291,1571,287,1499" opacity="0" target="_self" alt="Isle of Skye: From Chieftain to King" onclick="infoFromAPI(this)"/>
     <polygon  class="hover_group" points="600,1626,599,1687,298,1744,292,1678" opacity="0" target="_self" alt="Blood Bowl: Death Zone" onclick="infoFromAPI(this)"/>
@@ -113,12 +111,14 @@
     <polygon target="_self" alt="Warhammer Quest: Shadows Over Hammerhal" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="516,875,778,874,774,924,722,923,699,899,526,883,500,889,481,849"/>
     <polygon target="_self" alt="Carcassonne: Star Wars" onclick="infoFromAPI(this)" class="hover_group" opacity="0" points="379,932,469,929,469,897,483,889,484,853,472,813,363,838,374,848,375,862,378,905"/>
     
-
-    <polygon target="_self" alt="Lays" class="hover_group" opacity="0" href="https://www.vide.org/" points="1162,1924,1177,1711,1150,1660,797,1725,755,1791,747,1804,739,1960,752,2036,967,1992,967,1969,1162,1932"/>
+    <a href="https://www.vide.org/">
+    <polygon target="_self" alt="Lays" class="hover_group" opacity="0"  points="1162,1924,1177,1711,1150,1660,797,1725,755,1791,747,1804,739,1960,752,2036,967,1992,967,1969,1162,1932"/></a>
     
 
     <!--SPECIAL ITEM--><polygon target="_self" alt="Boites à Dés" class="hover_group" opacity="0"onclick="infoFromJSON(this)" points="865,495,1022,503,1026,449,987,436,967,445,927,435,911,443,902,434,859,430,857,481"/>
-    <polygon target="_self" alt="Twix" class="hover_group" opacity="0" href="https://www.youtube.com/watch?v=VOyrsZ2uTBo" points="625,114,873,178,858,259,668,233,599,244,558,233,569,130,610,114,623,118,625,114"/>
+    
+    <a href="https://www.youtube.com/watch?v=VOyrsZ2uTBo">
+    <polygon target="_self" alt="Twix" class="hover_group" opacity="0"  points="625,114,873,178,858,259,668,233,599,244,558,233,569,130,610,114,623,118,625,114"/></a>
     
 
     <polygon target="_self" alt="Yu-Gi-Oh! Trading Card Game" class="hover_group" opacity="0" onclick="infoFromAPI(this)" points="599,1766,797,1722,748,1801,741,1992,729,2026,707,2047,645,2042,649,2008,634,1951,626,1938,627,1889,603,1843"/>
@@ -130,17 +130,42 @@
 <figure  class="invisible" class="projectsvg" id="image2">	
 <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 1536" preserveAspectRatio="xMinYMin meet">
     //set your background image
-<image  width="2048" height="1536" xlink:href="armoire2.jpg">
-</image>
+<image  width="2048" height="1536" xlink:href="armoire2.jpg"></image>
+<polygon class="hover_group" target="_self" opacity="0" alt="Perudo" onclick="infoFromAPI(this)" points="37,1324,405,1304,479,1303,494,840,436,784,87,789"/>
+    <polygon class="hover_group" target="_self" opacity="0" alt="Lâche pas la Savonnette" onclick="infoFromAPI(this)" points="478,1281,787,1266,792,825,494,833"/>
+    <!--FROM JSON--><polygon class="hover_group" target="_self" opacity="0" alt="Insider" onclick="infoFromJSON(this)" points="796,1274,810,1490,456,1527,449,1299"/>
+    <polygon class="hover_group" target="_self" opacity="0" alt="Fantasy" onclick="infoFromAPI(this)" points="798,1237,1078,1232,1107,1527,816,1527"/>
+    <polygon class="hover_group" target="_self" opacity="0" alt="The Mind" onclick="infoFromAPI(this)" points="796,854,1072,854,1090,1227,787,1230"/>
+    <polygon class="hover_group" target="_self" opacity="0" alt="Oui seigneur des ténèbres 2, l'aube des héros" onclick="infoFromAPI(this)" points="1085,741,1361,739,1408,1303,1099,1299"/>
+    <polygon class="hover_group" target="_self" opacity="0" alt="Shadow Hunters" onclick="infoFromAPI(this)" points="1361,735,1853,735,1949,1418,1414,1415,1381,1404,1385,1310,1410,1303"/>
+    <polygon class="hover_group" target="_self" opacity="0" alt="Crazy Time" onclick="infoFromAPI(this)" points="1663,275,1859,284,1945,733,1866,771,1859,734,1683,729,1736,680"/>
+    <polygon class="hover_group" target="_self" opacity="0" alt="Les Loups-Garous de Thiercelieux" onclick="infoFromAPI(this)" points="960,61,1625,56,1732,679,1671,737,1081,735,1070,773,995,764,985,701"/>
+    <polygon class="hover_group" target="_self" opacity="0" alt="Captain Sonar" onclick="infoFromAPI(this)" points="176,76,951,67,985,828,796,842,792,823,492,830,440,781,87,799"/>
 </svg>
 </figure>
 
 
 <figure  class="invisible" class="projectsvg" id="image3">	
-<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 1536" preserveAspectRatio="xMinYMin meet">
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1560 1170" preserveAspectRatio="xMinYMin meet">
     //set your background image
-<image width="2048" height="1536" xlink:href="armoire3.jpg">
-</image>
+<image width="1560" height="1170" xlink:href="armoire3.jpg"></image>
+<polygon class="hover_group" opacity="0" target="_self" alt="Catan" onclick="infoFromAPI(this)" points="535,927,496,897,551,628,832,633,820,933"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="BANG!" onclick="infoFromAPI(this)" points="829,880,842,897,875,901,911,897,930,875,937,828,940,740,929,703,923,648,915,610,893,586,873,592,851,599,842,616,838,649,827,747"/>
+     <!--FROM JSON--><polygon class="hover_group" opacity="0" target="_self" alt="Imaginarium" onclick="infoFromJSON(this)" points="931,1058,1245,1077,1282,1059,1235,754,937,728"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Exploding Kittens"  onclick="infoFromAPI(this)" points="1253,861,1407,875,1425,861,1399,754,1239,747"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Mr. Jack" onclick="infoFromAPI(this)" points="1213,511,1413,523,1459,736,1441,772,1408,769,1238,747"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Taverna"  onclick="infoFromAPI(this)" points="938,734,1234,747,1212,511,934,498,930,644"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Munchkin" onclick="infoFromAPI(this)" points="1377,392,1414,519,1323,513,1293,395"/>
+    <!--FROM JSON--><polygon class="hover_group" opacity="0" target="_self" alt="Paranoia" onclick="infoFromJSON(this)" points="1261,309,1323,519,1121,501,1118,476,1088,311"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Le Donjon de Naheulbeuk" onclick="infoFromAPI(this)" points="859,303,1086,297,1116,475,1116,506,936,495,928,522,888,519,889,500,863,489"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Rumble in the Dungeon" onclick="infoFromAPI(this)" points="760,489,886,494,887,591,868,594,850,595,839,610,828,621,747,617,749,588"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Dix-huit Minutes pour un empire" onclick="infoFromAPI(this)" points="570,486,751,480,749,633,562,623"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Magic Maze" onclick="infoFromAPI(this)" points="658,318,853,314,857,469,850,487,751,487,650,479"/>
+    <!--FROM JSON--><polygon class="hover_group" opacity="0" target="_self" alt="Smallworld" onclick="infoFromJSON(this)" points="408,508,391,468,423,289,654,285,643,479,577,486,568,502"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="UNO" onclick="infoFromAPI(this)" points="248,511,401,504,386,471,397,415,259,415,240,489"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Final Fantasy Trading Card Game" onclick="infoFromAPI(this)" points="270,320,416,316,400,413,247,415"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Zombicide" onclick="infoFromAPI(this)" points="442,115,659,107,675,173,666,309,654,287,413,284"/>
+    <!--SPECIAL ITEM--><polygon class="hover_group" opacity="0" target="_self" alt="Boite de Dés" onclick="infoFromJSON(this)" points="890,534,930,534,926,600,904,597,890,579"/>
 </svg>
 </figure>
 
@@ -148,8 +173,16 @@
 <figure  class="invisible" class="projectsvg" id="image4">	
 <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1072 1920" preserveAspectRatio="xMinYMin meet">
     //set your background image
-<image width="1072" height="1920" xlink:href="armoire4.jpg">
-</image>
+<image width="1072" height="1920" xlink:href="armoire4.jpg"></image>
+ <polygon class="hover_group" opacity="0" target="_self" alt="The Binding of Isaac Four Souls: Kickstarter Expansion Pack" onclick="infoFromAPI(this)" points="83,1105,298,1077,312,1250,165,1276,144,1100,83,1101,82,1055,88,831,88,833,266,829,88,834,88,831,270,828,264,764,154,772,147,834,88,834"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Citadelles" onclick="infoFromAPI(this)" points="80,1102,298,1078,294,1032,272,826,88,834,72,1051"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="7 Wonders" onclick="infoFromAPI(this)" points="310,1135,819,1085,830,1039,854,1085,829,1192,320,1235"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Dixit" onclick="infoFromAPI(this)" points="285,772,269,775,299,1053,302,1136,822,1084,835,1002,805,951,800,972,640,986,638,1013,315,1039"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Codenames: Pictures" onclick="infoFromAPI(this)" points="313,723,280,727,286,772,313,1043,636,1012,642,931,553,711,539,718,560,766,562,815,577,835,578,895,378,920,331,776,330,759"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Exploding Kittens" onclick="infoFromAPI(this)" points="386,839,552,824,564,820,578,837,581,893,375,919,335,780,332,752,344,752"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Star Realms" onclick="infoFromAPI(this)" points="642,986,798,975,830,785,714,585,597,586,594,604,565,605,557,615,554,713,629,900,638,932"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Hanabi" onclick="infoFromAPI(this)" points="357,705,520,694,565,767,558,826,394,838,368,809,346,751,344,710"/>
+    <polygon class="hover_group" opacity="0" target="_self" alt="Tarot" onclick="infoFromAPI(this)" points="322,627,526,613,547,655,534,712,518,691,344,711,338,747,326,747,307,712,304,669"/>
 </svg>
 
 </figure>
@@ -271,7 +304,7 @@
                 game = element;
             }
         })
-        addInfoAndCreate(el.alt, game.Durée, game.Max_joueur, game.Min_joueur, el.alt + ".png", game.age, game.category);
+        addInfoAndCreate(el.alt, game.Durée, game.Max_joueur, game.Min_joueur, game.img, game.age, game.category);
     }
     /// GET DATA of THE GAME FROM API AND DISPLAY IN DIV
     /// el is my polygon
