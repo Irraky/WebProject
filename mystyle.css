@@ -173,7 +173,10 @@ margin: 10px;
 margin-left: 4vw;
 max-height: 40px;
 min-width: 40px;
-border-radius: 30px;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+-o-border-radius: 30px;
+border-radius : 30px;
 }
 #fb:hover{
 cursor: pointer;
@@ -187,7 +190,10 @@ width: 40px;
 margin: 10px;
 max-height: 40px;
 min-width: 40px;
-border-radius: 30px;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+-o-border-radius: 30px;
+border-radius : 30px;
 }
 #insta:hover{
 cursor: pointer;
@@ -201,7 +207,10 @@ width: 40px;
 margin: 10px;
 max-height: 40px;
 min-width: 40px;
-border-radius: 30px;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+-o-border-radius: 30px;
+border-radius : 30px;
 }
 #discord:hover{
 cursor: pointer;
