@@ -133,9 +133,10 @@
 				<div class="concept">
 					<h2>Bienvenue à la Taverne du Troll !!</h2>
 					<p>La <strong>Taverne du Troll</strong> est une association de jeux de société, jeux de cartes, jeux de rôles et jeux de figurines.</p>
-					<video width="60%" height="auto" controls>
-						<source src="VDA.mp4" type="video/mp4">
-					</video>
+					<!-- A new release on chrome will soon block this feature (only cookies for "samesite" attribute1)
+						We add a video in format mp4 at beginning but it's too heavy for github, even in a .zip
+						We tried through youtube but we didn't succeed so we finally choose dailymotion-->
+					<iframe frameborder="0" width="640" height="360" src="https://www.dailymotion.com/embed/video/k1qNr8Lzrnd2cIw6Bw9?autoplay=1" allowfullscreen="" allow="autoplay"></iframe>				
 				</div>
 				<h2 id="pré_title">La Taverne du Troll c'est quoi ?</h2>
 				<div class="présentation">
@@ -171,7 +172,7 @@
 		</footer>
 	</body>
 	<script type="text/javascript">
-
+			console.log("Read comment above iframe");
 	</script>
 	
 </html>
