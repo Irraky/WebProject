@@ -4,8 +4,8 @@
 		<title>Taverne du Troll</title>
 		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" language="javascript" src="db.json"></script>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		
 		<style type="text/css">
@@ -32,9 +32,13 @@
         width: 100%;
     }
     .invisible {
-    	position: absolute !important;
-   		top: -9999px !important;
-   		left: -9999px !important;
+    	opacity: 0;
+        max-height: 0px;
+        overflow-y: hidden;
+        -moz-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+        -o-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+        -webkit-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+        transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
     }
 
     .info button {
@@ -44,31 +48,64 @@
     	position: absolute;
     }
     .info {
-            font-size: 12px;
-            height: 20em;
-            width: 20em;
+            height: 25vw;
+            width: 25vw;
             padding: 20px;
-            background-color: brown;
             border: 2px black solid;
             position: absolute;
-            top: 50px;
-            left: 750px;
+            top: 10vw;
+            left: 0;
             text-align: center;
             cursor: grab;
-            display: flex;
+            display: block;
+            background-image: url("planche4.jpg");
+			box-shadow: 3px 3px 3px;
+     }
+     .info img {
+        max-width: 15vw;
+        max-height: 15vw;
+     	margin: auto;
+     	display: block;
+     }
+     .info h1 {
+     	text-decoration: underline;
+     	margin-bottom: 5px;
      }
      #armoireInfo {
-            font-size: 5vw;
+            font-size: 3vh;
             padding: 20px;
-            background-color: brown;
+            background-image: url("planche4.jpg");
             border: 2px black solid;
             margin: auto;
+            width: 50vh;
             text-align: center;
-            cursor: grab;
-			display: block;     
+			display: block;  
+			margin-top: 5px;   
 		}
-    .picOfGame {
-            height: 75%;
+    .heart {
+        cursor: pointer;
+        display: block;
+        text-align: right;
+        width: 20px;
+        height: 20px;
+    }
+    .emptyHeart {
+        background-image: url("coeur-vide.png");
+        background-size: cover;
+        background-color: transparent;
+    }
+    .emptyHeart:hover {
+        opacity: 0.5;
+        background-image: url("coeur-plein.png");
+    }
+    .fullHeart {
+        background-image: url("coeur-plein.png");
+        background-size: cover;
+        background-color: transparent;
+    }
+    .fullHeart:hover {
+        opacity: 0.5;
+        background-image: url("coeur-vide.png");
     }
     #fond {
     	position: absolute;
@@ -77,6 +114,19 @@
     	width: 100%;
     	overflow-x: hidden;
     	background-color: rgba(100, 100, 100, 0.5); 
+    }
+
+    #image1, #image2, #image3, #image4 {
+    	margin: auto;
+    	display: block;
+    }
+    #npbuttons {
+    	text-align: center;
+    	
+    }
+    #npbuttons button {
+    	padding: 5px;
+    	margin: 5px;
     }
 		</style>
 
@@ -105,12 +155,15 @@
 			</div>
 			<div id="reste">
 		<div id="fond">
-		<div onmousedown="drag(this)"  id="armoireInfo">
+		<div id="armoireInfo">
         <button type=button onclick="destroyDiv(this)">X</button>
         Si un jeu vous fait de l'oeil, n'hésitez pas et cliquez dessus.<br>
         Vous pourrez alors voir des informations supplémentaires.
 </div></div>
-
+<div id="npbuttons">
+	<button onclick="next()">NEXT</button>
+	<button onclick="prev()">PREV</button>
+</div>
 <figure  id="image1" class="projectsvg">
 <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1536 2048" preserveAspectRatio="xMinYMin meet">
     //set your background image
@@ -235,11 +288,14 @@
     <polygon class="hover_group" opacity="0" target="_self" alt="Hanabi" onclick="infoFromAPI(this)" points="357,705,520,694,565,767,558,826,394,838,368,809,346,751,344,710"/>
     <polygon class="hover_group" opacity="0" target="_self" alt="Tarot" onclick="infoFromAPI(this)" points="322,627,526,613,547,655,534,712,518,691,344,711,338,747,326,747,307,712,304,669"/>
 </svg>
-
+        
 </figure>
-<button onclick="next()">NEXT</button>
-<button onclick="prev()">PREV</button>
-			</div>
+        <table id="favorite" class="arrayFav">
+            <tr>
+                <th>Jeux Favoris</th>
+            </tr>
+        </table>
+		</div>
 		</main>
 		<footer>
 			<div id="rs">
@@ -253,7 +309,8 @@
 		</footer>
 	</body>
 	<script type="text/javascript">
-var curr = 1;
+    console.log(games);
+    var curr = 1;
 
  	function next() {
  		var img = document.getElementById("image" + curr);
@@ -288,53 +345,103 @@ var curr = 1;
  		img2.classList.add("projectsvg");
  	}
 
+function changeHeart(el) {
+    let tabel=document.getElementById('favorite');
+    let name = el.parentElement.id;
+    if (el.classList.contains("emptyHeart")) {
+        el.classList.add("fullHeart");
+        el.classList.remove("emptyHeart");
+        console.log(name);
+        let newLine = document.createElement("tr");
+        let newEntry = document.createElement("td");
+        newEntry.textContent = name;
+        newLine.appendChild(newEntry);
+        tabel.appendChild(newLine);
+
+    }
+    else {
+        el.classList.remove("fullHeart");
+        el.classList.add("emptyHeart");
+        for (let i = 0; i < tabel.rows.length; i++)
+        {
+            if (tabel.rows[i].cells[0].childNodes[0].textContent == name)
+                tabel.rows[i].remove();
+        }
+    }
+}
+
  function addDivOfGame(name, time, maxPlayer, minPlayer, image, age, category) {
+  let tabel=document.getElementById('favorite');
   var newDiv = document.createElement("div");
   var button = document.createElement("button");
   button.innerText = "X";
   button.onclick = function(){ closeDiv(this); };
   newDiv.appendChild(button);
   // et lui donne un peu de contenu
+  var h = document.createElement("h1");
   var gameName = document.createTextNode(name);
+  h.appendChild(gameName);
   // ajoute le nœud texte au nouveau div créé
-  newDiv.appendChild(gameName);
+  newDiv.appendChild(h);
+  h = document.createElement("div");
+  h.classList.add("heart");
+  h.classList.add("emptyHeart");
+  for (let i = 0; i < tabel.rows.length; i++)
+  {
+    if (tabel.rows[i].cells[0].childNodes[0].textContent == name) {
+        h.classList.remove("emptyHeart");
+        h.classList.add("fullHeart");
+    }
+  }
+  
+  h.onclick = function(){ changeHeart(this); };
+  newDiv.appendChild(h);
   if (image) {
     var img = document.createElement("img");
     img.src = image;
     newDiv.appendChild(img);
-    img.classList.add("picOfGame");
   }
+  var p;
   if (category) {
+  p = document.createElement("p");
   newContent = document.createTextNode('Catégorie: ' + category);
   // ajoute le nœud texte au nouveau div créé
-  newDiv.appendChild(newContent);
+  p.appendChild(newContent);
+  newDiv.appendChild(p);
   }
   if (time) {
+  p = document.createElement("p");
   newContent = document.createTextNode('Temps de jeu: ' + time);
   // ajoute le nœud texte au nouveau div créé
-  newDiv.appendChild(newContent);
+  p.appendChild(newContent);
+  newDiv.appendChild(p);
   }
   if (maxPlayer) {
+  p = document.createElement("p");
   if (maxPlayer != minPlayer)
     newContent = document.createTextNode('De ' + minPlayer + " à " + maxPlayer + "joueurs");
   else
     newContent = document.createTextNode('Pour' + minPlayer + "joueurs");
   // ajoute le nœud texte au nouveau div créé
-  newDiv.appendChild(newContent);
+  p.appendChild(newContent);
+  newDiv.appendChild(p);
   }
   if (age) {
+  p = document.createElement("p");
   newContent = document.createTextNode('Age: ' + age);
   // ajoute le nœud texte au nouveau div créé
-  newDiv.appendChild(newContent);
+  p.appendChild(newContent);
+  newDiv.appendChild(p);
   }
   var tmp = name;
   newDiv.id = tmp;
   newDiv.classList.add("info");
   // add to DOM
-  var currentDiv = document.getElementById('slider');
+  var currentDiv = document.getElementById('fond');
   document.body.insertBefore(newDiv, currentDiv);
   // div draggable
   newDiv.onmousedown= function() { drag(this); }
+  newDiv.style.top = document.body.scrollTop;
   return newDiv;
   
 }
