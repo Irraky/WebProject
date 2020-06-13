@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Taverne du Troll</title>
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		
+		<style type="text/css">
+			#member {
+				margin: auto;
+				margin-left: 7em;
+			}
+
+			.invisible {
+				/* don't want to see it on the DOM if not admin so display none */
+				display: none !important;
+			}
+			#treso {
+				display: flex;
+				width: 80%;
+        		margin: auto;
+			}
+			#treso div {
+				flex: 1;
+			}
+			#admin {
+				margin: auto;
+				margin-left: 7em;
+			}
+			h1 {
+				font-size: 3em;
+				margin: 20px;
+				text-decoration: underline;
+				text-shadow: black 1px 0 10px;
+			}
+			h2 {
+				margin-top: 15px;
+				font-size: 2.5em;
+				text-decoration: underline;
+				text-transform: uppercase;
+				text-shadow: black 1px 0 10px;
+			}
+			ul {
+				font-size: 2em;
+				margin-top: 10px;
+			}
+			#outcome li:last-child, #income li:last-child {
+				text-decoration: underline;
+				margin-bottom: 30px;
+			}
+			a {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+				
+				<div class="title">
+					<img id="logo" class="headers" src="logo-taverne.png" />
+					<a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
+					<img id="logo" class="headers" src="logo-taverne.png" />
+				</div>
+				
+		</header>
+		<main>
+			<div id="selection">
+				<img src="pancarte.png" id="pancarte1">
+				<a href='jeux.html' id="pano1">Nos jeux</a>
+				<img src="pancarte.png" id="pancarte2">
+				<a href='taverne.html' id="pano2">Armoire</a>
+				<img src="pancarte.png" id="pancarte3">
+				<a href='partenaire.html' id="pb1">Être membre</a>
+				<img src="pancarte.png" id="pancarte4">
+				<a href='évènement.html' id="pb2">Nos évènements</a>
+				
+			</div>
+			<div id="reste">
+				<div id="member">
+					<h1>Espace membre</h1>
+					<p> Bonjour tavernier, tu peux ici retrouver les documents importants de La Taverne du Troll.<br>Si tu as une question, n'hésites pas à la poser à un membre du bureau.</p>
+
+					<h3>La fiche d'emprunt</h3>
+					<p>Si tu veux emprunter un jeu, il te faudra tout d'abord remplir la fiche d'emprunt et la retourner à un membre du bureau.<br><a href="fiche_emprunt.docx" download="Fiche_emprunt_Taverne">⇩ Fiche d'emprunt de jeux ⇩</a></p>
+
+					<h3>Le règlement intérieur de la Taverne</h3>
+					<p>Le règlement intérieur doit être lu par tous les membres. Chaque tavernier se doit de respecter les différentes règles pour participer à la vie de l'association.<br>
+					<a href="reglement.docx" download="Reglement_interieur_Taverne">⇩ Règlement ⇩</a>
+					<h3>Les Statuts</h3>
+					<p>Dans ce document se trouvent les statuts de la taverne. On y retrouve les droits et devoirs de chaque membre.<br><a href="statuts.docx" download="Statuts_Taverne">⇩ Fiche d'emprunt de jeux ⇩</a></p>
+
+				</div>
+				<div class="invisible" id="admin">
+					<h1>Listes des membres</h1>
+					<ul id="members">
+					</ul>
+					<h1>Trésorerie</h1>
+					<div id="treso">
+						<div>
+							<h2>Dépenses</h2>
+							<ul id="outcome">
+							</ul>
+						</div>
+						<div>
+							<h2>Gains</h2>
+							<ul id="income">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div id="rs">
+				<h3>Réseaux sociaux</h3>		
+				<button type="button" onclick="window.location.href='https://www.facebook.com/EfreiTaverneduTroll'" id="fb"></button>
+				<button type="button" onclick="window.location.href='https://instagram.com/efreitavernedutroll?igshid=obdazlz3nkis'" id="insta"></button>
+				<button type="button" onclick="window.location.href='https://discord.gg/sG4hUpN'" id="discord"></button>
+			</div>
+			<a href="./team.html" id="info">Qui sommes-nous ?</a>
+			
+		</footer>
+	</body>
+	<script type="text/javascript">
+		console.log("Comme ce site est très sécurisé, chaque utilisateur à son login pour mot de passe.\nLes utilisateurs classiques sont user1, user2, user3 et user4.\nLe compte admin a pour login 'admin'");
+		var users = ["admin", "user1", "user2", "user3", "user4"];
+		var mdp = ["92668751", "111578566", "111578567", "111578568", "111578569"];
+		var finance = ["Jeux", "Tournois", "Traffic", "Boissons", "Snacks", "Livres JDR", "WEI", "Clefs", "Innondation", "Séisme", "Bannière", "Peluches", "Goodies"];
+		var financeValeur = [-120, 150, 1280, 132, 154, -300, -280, -38, -200, -153, -36, 60, 1543];
+
+		function extractUrlParams () {
+			var t = location.search.substring(1).split('&');
+			var f = [];
+			for (var i=0; i < t.length; i++) {
+				var x = t[ i ].split('=');
+				console.log(x);
+				f[x[0]]=x[1];
+			}
+		return f;
+		}
+		function hashPassword (s){
+  			return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a;
+  		},0);              
+}
+		var params = extractUrlParams();
+		if (params["name"] == null || params["password"] == null) {
+			alert("Vous n'êtes pas un utilisateur autorisé.\nRetour à l'accueil.");
+			document.location.href = "Taverne_accueil.html";
+		}
+		var user = users.indexOf(params["name"]);
+		if (user == -1 || mdp[user] != hashPassword(params["name"])) {
+			alert("Vous n'êtes pas un utilisateur autorisé.\nRetour à l'accueil.");
+			document.location.href = "Taverne_accueil.html";
+		}
+		// hash password = "admin"
+		if (params["name"] == "admin" && hashPassword(params["password"]) == "92668751") {
+			console.log("Bienvenue maître des lieux");
+			var admDiv = document.getElementById("admin");
+			admDiv.classList.remove("invisible");
+
+		}
+		var list = document.getElementById("members");
+		users.forEach(element => {
+			var entry = document.createElement('li');
+			var text = document.createTextNode(element);
+			entry.appendChild(text);
+			list.appendChild(entry);
+		})
+		income = document.getElementById("income");
+		outcome = document.getElementById("outcome");
+		var totalOutcome = 0;
+		var totalIncome = 0;
+		for (var i = 0; i < finance.length; i++)
+		{
+			var value = financeValeur[i].toString();
+			var entry = document.createElement('li');
+			var text = document.createTextNode(finance[i] + " : " + value + "€");
+			entry.appendChild(text);
+			if (value < 0) {
+				outcome.appendChild(entry);
+				totalOutcome -= financeValeur[i];
+			}
+			else {
+				income.appendChild(entry);
+				totalIncome += financeValeur[i];
+			}
+		}
+		var entry = document.createElement('li');
+		var text = document.createTextNode("TOTAL : " + totalOutcome + "€");
+		entry.appendChild(text);
+		outcome.appendChild(entry);
+
+		entry = document.createElement('li');
+		text = document.createTextNode("TOTAL : " + totalIncome + "€");
+		entry.appendChild(text);
+		income.appendChild(entry);
+
+	</script>
+	
+</html>

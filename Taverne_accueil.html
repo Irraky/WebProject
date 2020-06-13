@@ -82,6 +82,21 @@
 				font-size: 3vw;
 				padding-left: 3%;
 			}
+			.connection {
+				margin-right: 10px;
+				margin-top: 1vw;
+				height: 5vw;
+			}
+			.connection input {
+				height: 30px;
+  				width: 150px;
+  				font-size: 1em;
+  				-webkit-border-radius: 20px;
+				-moz-border-radius: 20px;
+				-o-border-radius: 20px;
+				border-radius : 20px;
+				text-align: center;
+			}
 
 		</style>
 	</head>
@@ -93,6 +108,13 @@
 					<a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
 					<img id="logo" class="headers" src="logo-taverne.png" />
 				</div>
+				<div class="connection">
+  				<form action="user.html">
+  					<input type="text" id="name" name="name" placeholder="Nom d'utilisateur" required><br><br>
+  					<input type="password" id="password" name="password" placeholder="Mot de passe" required><br><br>
+  					<input type="submit" value="Espace membre">
+				</form> 
+			    </div>
 				
 		</header>
 		<main>
