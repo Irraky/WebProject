@@ -1,3 +1,5 @@
+<!-- IMAGES BEAUCOUP TROP PETITES -->
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -29,16 +31,13 @@
         position: absolute; 
         top: 0; 
         left: 0; 
+        /* ATTENTION AVEC CETTE VALEUR : je crois que ça touche lors d'un redimensionnement*/
         width: 100%;
     }
     .invisible {
     	opacity: 0;
         max-height: 0px;
         overflow-y: hidden;
-        -moz-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
-        -o-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
-        -webkit-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
-        transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
     }
 
     .info button {
