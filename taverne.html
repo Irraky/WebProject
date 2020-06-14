@@ -1,29 +1,29 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Taverne du Troll</title>
-		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Taverne du Troll</title>
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" language="javascript" src="db.json"></script>
-		<link rel="stylesheet" type="text/css" href="mystyle.css">
-		
-		<style type="text/css">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        
+        <style type="text/css">
 .hover_group:hover
     {
         opacity: 0.3;
     }
     .projectsvg 
     { 
-    	display: inline-block;
+        display: inline-block;
         position: relative;
         width: 50%; 
         padding-bottom: 67%;
         vertical-align: middle; 
         margin: auto; 
         overflow: hidden;
-    	
+        
     }
     .projectsvg svg 
     { 
@@ -34,16 +34,16 @@
         width: 100%;
     }
     .invisible {
-    	opacity: 0;
+        opacity: 0;
         max-height: 0px;
         overflow-y: hidden;
     }
 
     .info button {
-    	height: 2vh;
-    	left: 5px;
-    	top: 5px;
-    	position: absolute;
+        height: 2vh;
+        left: 5px;
+        top: 5px;
+        position: absolute;
     }
     .info {
             height: 30vw;
@@ -57,17 +57,17 @@
             cursor: grab;
             display: block;
             background-image: url("planche4.jpg");
-			box-shadow: 3px 3px 3px;
+            box-shadow: 3px 3px 3px;
      }
      .info img {
         max-width: 15vw;
         max-height: 15vw;
-     	margin: auto;
-     	display: block;
+        margin: auto;
+        display: block;
      }
      .info h1 {
-     	text-decoration: underline;
-     	margin-bottom: 5px;
+        text-decoration: underline;
+        margin-bottom: 5px;
      }
      #armoireInfo {
             font-size: 3vh;
@@ -77,9 +77,9 @@
             margin: auto;
             width: 50vh;
             text-align: center;
-			display: block;  
-			margin-top: 5px;   
-		}
+            display: block;  
+            margin-top: 5px;   
+        }
     .heart {
         cursor: pointer;
         display: block;
@@ -106,67 +106,78 @@
         background-image: url("coeur-vide.png");
     }
     #fond {
-    	position: absolute;
-    	z-index: 1;
-    	height: 65vw;
-    	width: 100%;
-    	overflow-x: hidden;
-    	background-color: rgba(100, 100, 100, 0.5); 
+        margin-top: 100px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgba(100, 100, 100, 0.5); 
     }
 
     #image1, #image2, #image3, #image4 {
-    	margin: auto;
-    	display: block;
+        margin: auto;
+        display: block;
     }
     #npbuttons {
-    	text-align: center;
-    	
+        text-align: center;
+        
     }
     #npbuttons button {
-    	padding: 5px;
-    	margin: 5px;
+        padding: 5px;
+        margin: 5px;
     }
-		</style>
+    #favorite {
+        margin: auto;
+        padding-bottom: 50px;
+        font-size: 3vw;
+    }
+    #favorite td, #favorite th  {
+        font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif !important;
 
-	</head>
-	<body>
-		<header>
-				
-				<div class="title">
-					<img id="logo" class="headers" src="logo-taverne.png" />
-					<a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
-					<img id="logo" class="headers" src="logo-taverne.png" />
-				</div>
-				
-		</header>
-		<main>
-			<div id="selection">
-				<img src="pancarte.png" id="pancarte1">
-				<a href='jeux.html' id="pano1">Nos jeux</a>
-				<img src="pancarte.png" id="pancarte2">
-				<a href='taverne.html' id="pano2">Armoire</a>
-				<img src="pancarte.png" id="pancarte3">
-				<a href='partenaire.html' id="pb1">Être membre</a>
-				<img src="pancarte.png" id="pancarte4">
-				<a href='évènement.html' id="pb2">Nos évènements</a>
-				
-			</div>
-			<div id="reste">
-		<div id="fond">
-		<div id="armoireInfo">
+    }
+        </style>
+
+    </head>
+    <body>
+        <header>
+                
+                <div class="title">
+                    <img id="logo" class="headers" src="logo-taverne.png" />
+                    <a href="Taverne_accueil.html" id="big-title" class="headers">Taverne du Troll</a>
+                    <img id="logo" class="headers" src="logo-taverne.png" />
+                </div>
+                
+        </header>
+        <main>
+            <div id="selection">
+                <img src="pancarte.png" id="pancarte1">
+                <a href='jeux.html' id="pano1">Nos jeux</a>
+                <img src="pancarte.png" id="pancarte2">
+                <a href='taverne.html' id="pano2">Armoire</a>
+                <img src="pancarte.png" id="pancarte3">
+                <a href='partenaire.html' id="pb1">Être membre</a>
+                <img src="pancarte.png" id="pancarte4">
+                <a href='évènement.html' id="pb2">Nos évènements</a>
+                
+            </div>
+            <div id="reste">
+        <div id="fond">
+        <div id="armoireInfo">
         <button type=button onclick="destroyDiv(this)">X</button>
         Si un jeu vous fait de l'oeil, n'hésitez pas et cliquez dessus.<br>
         Vous pourrez alors voir des informations supplémentaires.
 </div></div>
 <div id="npbuttons">
     <button onclick="prev()">PREV</button>
-	<button onclick="next()">NEXT</button>
+    <button onclick="next()">NEXT</button>
 </div>
 <figure  id="image1" class="projectsvg">
 <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1536 2048" preserveAspectRatio="xMinYMin meet">
     <!--//set your background image-->
 <image  width="1536" height="2048" xlink:href="armoire.jpg"></image>
-	<polygon class="hover_group" points="653,1622,740,1615,738,1592,728,1554,779,1542,742,1473,671,1485,681,1537,636,1543,632,1579,647,1614" opacity="0"  target="_self" alt="UNO" onclick="infoFromAPI(this)"/>
+    <polygon class="hover_group" points="653,1622,740,1615,738,1592,728,1554,779,1542,742,1473,671,1485,681,1537,636,1543,632,1579,647,1614" opacity="0"  target="_self" alt="UNO" onclick="infoFromAPI(this)"/>
     <polygon class="hover_group"  points="607,1536,619,1558,618,1620,292,1677,294,1603,291,1572,486,1542,488,1552" opacity="0" target="_self" alt="Tokaido" onclick="infoFromAPI(this)"/>
     <polygon class="hover_group" points="485,1473,489,1541,291,1571,287,1499" opacity="0" target="_self" alt="Isle of Skye: From Chieftain to King" onclick="infoFromAPI(this)"/>
     <polygon  class="hover_group" points="600,1626,599,1687,298,1744,292,1678" opacity="0" target="_self" alt="Blood Bowl: Death Zone" onclick="infoFromAPI(this)"/>
@@ -229,7 +240,7 @@
 </figure>
 
 
-<figure  class="invisible" class="projectsvg" id="image2">	
+<figure  class="invisible" class="projectsvg" id="image2">  
 <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2048 1536" preserveAspectRatio="xMinYMin meet">
     <!--set your background image-->
 <image  width="2048" height="1536" xlink:href="armoire2.jpg"></image>
@@ -247,7 +258,7 @@
 </figure>
 
 
-<figure  class="invisible" class="projectsvg" id="image3">	
+<figure  class="invisible" class="projectsvg" id="image3">  
 <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1560 1170" preserveAspectRatio="xMinYMin meet">
     <!--//set your background image-->
 <image width="1560" height="1170" xlink:href="armoire3.jpg"></image>
@@ -272,7 +283,7 @@
 </figure>
 
 
-<figure  class="invisible" class="projectsvg" id="image4">	
+<figure  class="invisible" class="projectsvg" id="image4">  
 <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1072 1920" preserveAspectRatio="xMinYMin meet">
   <!--  //set your background image-->
 <image width="1072" height="1920" xlink:href="armoire4.jpg"></image>
@@ -290,58 +301,58 @@
 </figure>
         <table id="favorite" class="arrayFav">
             <tr>
-                <th>Jeux Favoris</th>
+                <th>Jeux Favoris :</th>
             </tr>
         </table>
-		</div>
-		</main>
-		<footer>
-			<div id="rs">
-				<h3>Réseaux sociaux</h3>		
-				<button type="button" onclick="window.location.href='https://www.facebook.com/EfreiTaverneduTroll'" id="fb"></button>
-				<button type="button" onclick="window.location.href='https://instagram.com/efreitavernedutroll?igshid=obdazlz3nkis'" id="insta"></button>
-				<button type="button" onclick="window.location.href='https://discord.gg/sG4hUpN'" id="discord"></button>
-			</div>
-			<a href="./team.html" id="info">Qui sommes-nous ?</a>
-			
-		</footer>
-	</body>
-	<script type="text/javascript">
+        </div>
+        </main>
+        <footer>
+            <div id="rs">
+                <h3>Réseaux sociaux</h3>        
+                <button type="button" onclick="window.location.href='https://www.facebook.com/EfreiTaverneduTroll'" id="fb"></button>
+                <button type="button" onclick="window.location.href='https://instagram.com/efreitavernedutroll?igshid=obdazlz3nkis'" id="insta"></button>
+                <button type="button" onclick="window.location.href='https://discord.gg/sG4hUpN'" id="discord"></button>
+            </div>
+            <a href="./team.html" id="info">Qui sommes-nous ?</a>
+            
+        </footer>
+    </body>
+    <script type="text/javascript">
     console.log(games);
     var curr = 1;
 
- 	function next() {
- 		var img = document.getElementById("image" + curr);
- 		var img2;
- 		if (curr != 4) {
- 			img2 = document.getElementById("image" + (curr + 1));
- 			curr++;
- 		}
- 		else {
- 			img2 = document.getElementById("image" + 1);
- 			curr = 1;
- 		}
- 		img.classList.add("invisible");
- 		img.classList.remove("projectsvg");
- 		img2.classList.remove("invisible");
- 		img2.classList.add("projectsvg");
- 	}
- 	function prev() {
- 		var img = document.getElementById("image" + curr);
- 		var img2;
- 		if (curr != 1) {
- 			img2 = document.getElementById("image" + (curr - 1));
- 			curr--;
- 		}
- 		else {
- 			img2 = document.getElementById("image" + 4);
- 			curr = 4;
- 		}
- 		img.classList.add("invisible");
- 		img.classList.remove("projectsvg");
- 		img2.classList.remove("invisible");
- 		img2.classList.add("projectsvg");
- 	}
+    function next() {
+        var img = document.getElementById("image" + curr);
+        var img2;
+        if (curr != 4) {
+            img2 = document.getElementById("image" + (curr + 1));
+            curr++;
+        }
+        else {
+            img2 = document.getElementById("image" + 1);
+            curr = 1;
+        }
+        img.classList.add("invisible");
+        img.classList.remove("projectsvg");
+        img2.classList.remove("invisible");
+        img2.classList.add("projectsvg");
+    }
+    function prev() {
+        var img = document.getElementById("image" + curr);
+        var img2;
+        if (curr != 1) {
+            img2 = document.getElementById("image" + (curr - 1));
+            curr--;
+        }
+        else {
+            img2 = document.getElementById("image" + 4);
+            curr = 4;
+        }
+        img.classList.add("invisible");
+        img.classList.remove("projectsvg");
+        img2.classList.remove("invisible");
+        img2.classList.add("projectsvg");
+    }
 
 function changeHeart(el) {
     let tabel=document.getElementById('favorite');
@@ -494,7 +505,7 @@ function changeHeart(el) {
     /// GET DATA of THE GAME FROM API AND DISPLAY IN DIV
     /// el is my polygon
     function infoFromAPI(el) {
-    	var tmp = el.attributes.alt.value.replace(/\s+/g, '');
+        var tmp = el.attributes.alt.value.replace(/\s+/g, '');
         if (document.getElementById(tmp) != null)
             return;
         var game = el.attributes.alt.value; /// alt of the polygon equal to the name of the game in the api
@@ -600,6 +611,6 @@ function drag (el) {
 
 document.onmousemove = _move_elem;
 document.onmouseup = _destroy;
-	</script>
-	
+    </script>
+    
 </html>
