@@ -1,4 +1,3 @@
-<!-- IMAGES BEAUCOUP TROP PETITES -->
 
 <!DOCTYPE html>
 <html>
@@ -19,8 +18,8 @@
     { 
     	display: inline-block;
         position: relative;
-        width: 40%; 
-        padding-bottom: 55%;
+        width: 50%; 
+        padding-bottom: 67%;
         vertical-align: middle; 
         margin: auto; 
         overflow: hidden;
@@ -47,7 +46,7 @@
     	position: absolute;
     }
     .info {
-            height: 25vw;
+            height: 30vw;
             width: 25vw;
             padding: 20px;
             border: 2px black solid;
@@ -403,14 +402,14 @@ function changeHeart(el) {
   var p;
   if (category) {
   p = document.createElement("p");
-  newContent = document.createTextNode('Catégorie: ' + category);
+  newContent = document.createTextNode('Catégorie : ' + category);
   // ajoute le nœud texte au nouveau div créé
   p.appendChild(newContent);
   newDiv.appendChild(p);
   }
   if (time) {
   p = document.createElement("p");
-  newContent = document.createTextNode('Temps de jeu: ' + time);
+  newContent = document.createTextNode('Temps de jeu : ' + time);
   // ajoute le nœud texte au nouveau div créé
   p.appendChild(newContent);
   newDiv.appendChild(p);
@@ -420,14 +419,14 @@ function changeHeart(el) {
   if (maxPlayer != minPlayer)
     newContent = document.createTextNode('De ' + minPlayer + " à " + maxPlayer + "joueurs");
   else
-    newContent = document.createTextNode('Pour' + minPlayer + "joueurs");
+    newContent = document.createTextNode('Pour ' + minPlayer + " joueurs");
   // ajoute le nœud texte au nouveau div créé
   p.appendChild(newContent);
   newDiv.appendChild(p);
   }
   if (age) {
   p = document.createElement("p");
-  newContent = document.createTextNode('Age: ' + age);
+  newContent = document.createTextNode('Age : ' + age);
   // ajoute le nœud texte au nouveau div créé
   p.appendChild(newContent);
   newDiv.appendChild(p);
@@ -441,19 +440,42 @@ function changeHeart(el) {
   // div draggable
   newDiv.onmousedown= function() { drag(this); }
   newDiv.style.top = document.body.scrollTop;
-  return newDiv;
   
 }
 
 
-    function addInfoAndCreate(name, time, maxPlayer, minPlayer, img, age, category) {
-        var div = addDivOfGame(name, time, maxPlayer, minPlayer, img, age, category);
+    function addInfoAndCreate(name, time, maxPlayer, minPlayer, img, age, category, fullName) {
+        addDivOfGame(name, time, maxPlayer, minPlayer, img, age, category);
+        var newDiv = document.getElementById(name);
         var game;
         games.forEach(element => {
-            if (name == element.Dénomination) {
+            if (fullName.value == element.Dénomination) {
                 game = element;
             }
         })
+        console.log(newDiv);
+        var p;
+        var newContent;
+        
+        if (game.Etat && game.Quantité)
+            newContent = document.createTextNode('Etat : ' + game.Etat + '  - Quantité : ' + game.Quantité);
+        else if (game.Etat)
+            newContent = document.createTextNode('Etat : ' + game.Etat);
+        else if (game.Quantité)
+            newContent = document.createTextNode('Quantité : ' + game.Quantité);
+        if (game.Etat || game.Quantité) {
+            p = document.createElement("p");
+            // ajoute le nœud texte au nouveau div créé
+            p.appendChild(newContent);
+            newDiv.appendChild(p);
+        }
+        if (game.Remarques) {
+            p = document.createElement("p");
+            newContent = document.createTextNode('Remarque(s) : ' + game.Remarques);
+            // ajoute le nœud texte au nouveau div créé
+            p.appendChild(newContent);
+            newDiv.appendChild(p);
+        }
 
     }
     function infoFromJSON(el) {
@@ -467,7 +489,7 @@ function changeHeart(el) {
                 game = element;
             }
         })
-        addInfoAndCreate(tmp, game.Durée, game.Max_joueur, game.Min_joueur, game.img, game.age, game.category);
+        addInfoAndCreate(tmp, game.Durée, game.Max_joueur, game.Min_joueur, game.img, game.age, game.category, el.attributes.alt);
     }
     /// GET DATA of THE GAME FROM API AND DISPLAY IN DIV
     /// el is my polygon
@@ -524,7 +546,7 @@ function changeHeart(el) {
             var maxplayers = data.getElementsByTagName('maxplayers')[0].innerHTML;
             var image = data.getElementsByTagName('image')[0].innerHTML;
             var category = data.getElementsByTagName('boardgamecategory')[0].innerHTML;
-            addInfoAndCreate(tmp , time, maxplayers, minplayers, image, age, category);
+            addInfoAndCreate(tmp , time, maxplayers, minplayers, image, age, category, el.attributes.alt);
             return xmlDoc;
         })
         .catch(error => {
