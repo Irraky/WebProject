@@ -9,8 +9,38 @@
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		
 		<style type="text/css">
-			
+		.projectsvg 
+    	{ 
+    		display: block;
+        	width: 70%; 
+        	vertical-align: middle; 
+        	margin: auto;     	
+    	}
+    	.invisible {
+    		opacity: 0;
+        	max-height: 0px;
+        	overflow-y: hidden;
+    	}
+    	.event {
+    		height : 700px;
+    		margin: auto;
+    		width: 50%;
+    		margin-top: 200px;
+    	}
 
+    	.buttons {
+    		display: block;
+    		position: relative;
+    		margin: auto;
+    		width: 30%;
+    		margin-bottom: 0;
+    		margin-top: 50px;
+    	}
+
+    	button {
+    		display: inline-block;
+    		margin : 5%;    	
+    	}
 		</style>
 	</head>
 	<body>
@@ -35,7 +65,6 @@
 				<a href='évènement.html' id="pb2">Nos évènements</a>
 			</div>
 			<div id="reste">
-				
 			</div>
 		</main>
 		<footer>
@@ -50,21 +79,83 @@
 		</footer>
 	</body>
 	<script type="text/javascript">
-		let menu_state=0;
-		function show_menu()
-		{
-			if(menu_state==0)
-			{
-				document.getElementById("selection").style.display = 'flex';
-				menu_state=1;
-			}
-			else
-			{
-				document.getElementById("selection").style.display = 'none';
-				menu_state=0;
-			}
-			
+		var carousels = [{"name": "jdm_", "curr": 1, "max": 5}, {"name": "perudo_", "curr": 1, "max": 12}, {"name": "cdc_", "curr": 1, "max": 5}, {"name": "noel_", "curr": 1, "max": 2}, {"name": "aki_11_1_", "curr": 1, "max": 4}];
+	let news = document.getElementById('reste');
+	var newDiv;
+	var divButtons;
+	var img;
+	for (var i = 0; i < carousels.length; i++) {
+		newDiv = document.createElement("div");
+		newDiv.classList.add("event");
+		divButtons = document.createElement("div");
+		divButtons.classList.add("buttons");
+		var button = document.createElement("button");
+  		button.innerText = "⇐";
+  		button.id = carousels[i].name;
+  		button.onclick = function(){ prev(this); };
+  		divButtons.appendChild(button);
+  		button = document.createElement("button");
+  		button.innerText = "⇒";
+  		button.id = carousels[i].name;
+  		button.onclick = function(){ next(this); };
+  		divButtons.appendChild(button);
+  		newDiv.appendChild(divButtons);
+		for (var j = 1; j <= carousels[i].max; j++) {
+			img = document.createElement("img");
+			img.src = "events/" + carousels[i].name + j + ".jpg";
+			img.id = carousels[i].name + j;
+			img.classList.add("projectsvg");
+			if (j != 1)
+				img.classList.add("invisible");
+			newDiv.appendChild(img);
 		}
+		news.appendChild(newDiv);
+	}
+
+ 	function next(el) {
+ 		console.log(el.id);
+ 		var event;
+ 		for (let i = 0; i < carousels.length; i++) {
+ 			if (carousels[i].name == el.id)
+ 				event = carousels[i];
+ 		}
+ 		let img = document.getElementById(event.name + event.curr);
+ 		let img2;
+ 		if (event.curr != event.max) {
+ 			img2 = document.getElementById(event.name + (event.curr + 1));
+ 			event.curr++;
+ 		}
+ 		else {
+ 			img2 = document.getElementById(event.name + "1");
+ 			event.curr = 1;
+ 		}
+ 		img.classList.add("invisible");
+ 		img.classList.remove("projectsvg");
+ 		img2.classList.remove("invisible");
+ 		img2.classList.add("projectsvg");
+ 	}
+ 	function prev(el) {
+ 		var event;
+ 		for (let i = 0; i < carousels.length; i++) {
+ 			if (carousels[i].name == el.id)
+ 				event = carousels[i];
+ 		}
+ 		let img = document.getElementById(event.name + event.curr);
+ 		let img2;
+ 		if (event.curr != 1) {
+ 			img2 = document.getElementById(event.name + (event.curr - 1));
+ 			event.curr--;
+ 		}
+ 		else {
+ 			img2 = document.getElementById(event.name + event.max);
+ 			event.curr = event.max;
+ 		}
+ 		console.log(img2);
+ 		img.classList.add("invisible");
+ 		img.classList.remove("projectsvg");
+ 		img2.classList.remove("invisible");
+ 		img2.classList.add("projectsvg");
+ 	}
 
 	</script>
 	
