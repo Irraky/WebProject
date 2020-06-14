@@ -185,13 +185,13 @@
 	    	{
 	    		document.getElementById('previous').disabled = false;
 	    	}
-	    	if(iteration <length/10)
+	    	if(iteration <((length+(10-length%10)%10)/10))
 	    	{
 	    		iteration++;
 	    		tout_supprimer();
 	    		GetGames();
 	    	}
-	    	if(iteration==(length/10)-1)
+	    	if(iteration==((length+(10-length%10)%10)/10)-1)
 	    	{
 	    		document.getElementById('next').disabled = true;
 	   		}
@@ -208,7 +208,7 @@
 	    {
 	    	let length=get_length();
 	    	
-    		if(iteration == (length/10)-1)
+    		if(iteration == ((length+(10-length%10)%10)/10)-1)
 	    	{
 	    		document.getElementById('next').disabled = false;
 	    	}
@@ -258,12 +258,11 @@
 	    	let time=document.getElementById('duration');
 	    	var add=0;
 	    	var data = games;
-	    	if(iteration == (length/10)-1 || length <=10)
+	    	if(iteration == ((length+(10-length%10)%10)/10)-1 || length<=10)
 	    	{
 	    		add = (-(10-length%10))%10;
 	    	}
-	    	console.log(length);
-	    	console.log(add);
+
 			for (var i = iteration*10+global_add; i <(iteration+1)*10+global_add+add; i++) {
 				if(data[i].Catégorie=="JdS" || data[i].Catégorie=="JdC"){
 	    			if(nb.value!="-")
@@ -359,6 +358,9 @@
 				}
 			    
 			}
+			console.log("start1 = ",iteration*10+global_add);
+			console.log("end1 = ",(iteration+1)*10+global_add+add);
+			console.log("add1 = ",add);
 			global_add+=add;
 	    }
 
@@ -377,7 +379,7 @@
 	    	let time=document.getElementById('duration');
 	    	var data = games;
 	    	let length=0;
-	    	for (var i = 0; i < 96; i++) {
+	    	for (var i = 0; i < 105; i++) {
 	    		if(data[i].Catégorie=="JdS" || data[i].Catégorie=="JdC"){
 	    			if(nb.value!="-")
 		    		{
@@ -391,7 +393,6 @@
 		    					}
 		    					if(time.value == "45" && data[i].Durée == "30min à 45min")
 		    					{
-		    						console.log(data[i].Dénomination);
 		    						length++;
 		    					}
 		    					if(time.value == "1" && data[i].Durée == "45min à 1h")
@@ -443,19 +444,78 @@
 
 	    function minus_global_add()
 	    {
+	    	let nb=document.getElementById('nb_player');
+	    	let time=document.getElementById('duration');
 	    	length=get_length();
 	    	var add=0;
 	    	var data = games;
-	    	if(iteration == (length/10)-1)
+	    	if(iteration == (length+(10-length%10)%10)/10-1)
 	    	{
-	    		add = -length%10;
+	    		add = (-(10-length%10))%10+1;
 	    	}
+	    	console.log(add);
 			for (var i = iteration*10+global_add+9; i > (iteration-1)*10+global_add-add; i--) {
-				if (data[i].Catégorie!="JdS" && data[i].Catégorie!="JdC") {
-					add++;
+				console.log(data[i].Dénomination);
+				if (data[i].Catégorie=="JdS" || data[i].Catégorie=="JdC") {
+					if(nb.value!="-")
+		    		{
+		    			if(nb.value <= data[i].Max_joueur && nb.value >= data[i].Min_joueur)
+		    			{
+		    				if(time.value!="-")
+		    				{
+		    					if(time.value == "30" && data[i].Durée != "-30min")
+		    					{
+		    						add++;
+		    					}
+		    					if(time.value == "45" && data[i].Durée != "30min à 45min")
+		    					{
+		    						add++;
+		    					}
+		    					if(time.value == "1" && data[i].Durée != "45min à 1h")
+		    					{
+		    						add++;
+		    					}
+		    					if(time.value == "2" && data[i].Durée != "+1h")
+		    					{
+		    						add++;
+		    					}
+		    				}
+		    			}
+		    			else
+		    			{
+		    				add++;
+		    			}
+		    		}
+		    		else
+		    		{
+		    			if(time.value!="-")
+	    				{
+	    					if(time.value == "30" && data[i].Durée != "-30min")
+	    					{
+	    						add++;
+	    					}
+	    					if(time.value == "45" && data[i].Durée != "30min à 45min")
+	    					{
+	    						add++;
+	    					}
+	    					if(time.value == "1" && data[i].Durée != "45min à 1h")
+	    					{
+	    						add++;
+	    					}
+	    					if(time.value == "2" && data[i].Durée != "+1h")
+	    					{
+	    						add++;
+	    					}
+	    				}
+		    		}
 				}
+				else
+					add++;
 			    
 			}
+			console.log("start2",iteration*10+global_add+9);
+			console.log("end2", (iteration-1)*10+global_add-add);
+			console.log("add2 = ",add);
 			global_add-=add;
 	    }
 
