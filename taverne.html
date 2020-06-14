@@ -46,8 +46,7 @@
         position: absolute;
     }
     .info {
-            height: 30vw;
-            width: 25vw;
+
             padding: 20px;
             border: 2px black solid;
             position: absolute;
@@ -59,15 +58,22 @@
             background-image: url("planche4.jpg");
             box-shadow: 3px 3px 3px;
      }
+     .info p {
+        font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif !important;
+        color: white;
+        font-size: 2vw;
+     }
+     .info h1 {
+        color: white;
+        font-size: 3vw;
+        text-decoration: underline;
+        margin-bottom: 5px;
+     }
      .info img {
         max-width: 15vw;
         max-height: 15vw;
         margin: auto;
         display: block;
-     }
-     .info h1 {
-        text-decoration: underline;
-        margin-bottom: 5px;
      }
      #armoireInfo {
             font-size: 3vh;
@@ -430,7 +436,7 @@ function changeHeart(el) {
   if (maxPlayer) {
   p = document.createElement("p");
   if (maxPlayer != minPlayer)
-    newContent = document.createTextNode('De ' + minPlayer + " à " + maxPlayer + "joueurs");
+    newContent = document.createTextNode('De ' + minPlayer + " à " + maxPlayer + " joueurs");
   else
     newContent = document.createTextNode('Pour ' + minPlayer + " joueurs");
   // ajoute le nœud texte au nouveau div créé
@@ -452,7 +458,8 @@ function changeHeart(el) {
   document.body.insertBefore(newDiv, currentDiv);
   // div draggable
   newDiv.onmousedown= function() { drag(this); }
-  newDiv.style.top = document.body.scrollTop;
+  newDiv.style.top = 35 +'vw';
+  newDiv.style.left = 10 +'px';
   
 }
 
