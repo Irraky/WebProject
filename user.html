@@ -12,6 +12,7 @@
 			#member {
 				margin: auto;
 				margin-left: 7em;
+				padding-bottom: 20px;
 			}
 
 			.invisible {
@@ -22,13 +23,22 @@
 				display: flex;
 				width: 80%;
         		margin: auto;
+        		justify-content: space-around;
 			}
-			#treso div {
+			/*#treso div {
 				flex: 1;
-			}
+			}*/
 			#admin {
 				margin: auto;
 				margin-left: 7em;
+			}
+			#member p{
+				font-size: 2vw;
+				font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+			}
+			#member a{
+				color: rgb(16,34,199);
+				font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
 			}
 			h1 {
 				font-size: 3em;
@@ -43,16 +53,39 @@
 				text-transform: uppercase;
 				text-shadow: black 1px 0 10px;
 			}
+			h3{
+				margin-top: 20px;
+			}
+			#members{
+				display: flex;
+			}
+			#members li{
+				flex:1;
+			}
 			ul {
 				font-size: 2em;
 				margin-top: 10px;
+				margin-bottom: 30px;
+			}
+			li{
+				font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
 			}
 			#outcome li:last-child, #income li:last-child {
 				text-decoration: underline;
 				margin-bottom: 30px;
 			}
-			a {
-				color: blue;
+			#admin h1{
+				text-align: center;
+			}
+			#treso_title{
+				display: flex;
+				align-items: center;
+				margin: auto;
+				width: 20em;
+			}
+			#coffre{
+				width: 3.5em;
+				height: auto;
 			}
 		</style>
 	</head>
@@ -81,7 +114,7 @@
 			<div id="reste">
 				<div id="member">
 					<h1>Espace membre</h1>
-					<p> Bonjour tavernier, tu peux ici retrouver les documents importants de La Taverne du Troll.<br>Si tu as une question, n'hésites pas à la poser à un membre du bureau.</p>
+					<p> Bonjour tavernier, tu peux ici retrouver les documents importants de La Taverne du Troll.<br>Si tu as une question, n'hésite pas à la poser à un membre du bureau.</p>
 
 					<h3>La fiche d'emprunt</h3>
 					<p>Si tu veux emprunter un jeu, il te faudra tout d'abord remplir la fiche d'emprunt et la retourner à un membre du bureau.<br><a href="fiche_emprunt.docx" download="Fiche_emprunt_Taverne">⇩ Fiche d'emprunt de jeux ⇩</a></p>
@@ -90,14 +123,18 @@
 					<p>Le règlement intérieur doit être lu par tous les membres. Chaque tavernier se doit de respecter les différentes règles pour participer à la vie de l'association.<br>
 					<a href="reglement.docx" download="Reglement_interieur_Taverne">⇩ Règlement ⇩</a>
 					<h3>Les Statuts</h3>
-					<p>Dans ce document se trouvent les statuts de la taverne. On y retrouve les droits et devoirs de chaque membre.<br><a href="statuts.docx" download="Statuts_Taverne">⇩ Statuts ⇩</a></p>
+					<p>Dans ce document se trouvent les statuts de la Taverne. On y retrouve les droits et devoirs de chaque membre.<br><a href="statuts.docx" download="Statuts_Taverne">⇩ Statuts ⇩</a></p>
 
 				</div>
 				<div class="invisible" id="admin">
 					<h1>Listes des membres</h1>
 					<ul id="members">
 					</ul>
-					<h1>Trésorerie</h1>
+					<div id="treso_title">
+						<img src="coffre.png" id="coffre">
+						<h1>Trésorerie</h1>
+						<img src="coffre.png" id="coffre">
+					</div>
 					<div id="treso">
 						<div>
 							<h2>Dépenses</h2>
