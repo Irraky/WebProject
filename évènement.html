@@ -1,3 +1,4 @@
+<!-- CHANGE LA POLICE POUR LES BALISES P, C EST ILLISIBLE-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,26 +22,44 @@
         	max-height: 0px;
         	overflow-y: hidden;
     	}
+    	#infoEvent {
+    		text-align: justify;
+    		color: black;
+    		margin: auto;
+    		width: 35%;
+    		margin-top: 50px;
+    		/* Compense la marge top positive de l'element suivant (qui est attribuee a toutes les div event) */
+    		margin-bottom: -150px;
+
+    	}
     	.event {
-    		height : 700px;
+    		height : 800px;
     		margin: auto;
     		width: 50%;
     		margin-top: 200px;
     	}
 
+    	.descri {
+    		text-align: justify;
+    		color: black;
+    		margin: auto;
+    		width: 65%;
+    	}
+
     	.buttons {
     		display: block;
     		position: relative;
-    		margin: auto;
-    		width: 30%;
+    		width: 20%;
     		margin-bottom: 0;
-    		margin-top: 50px;
+    		margin-top: 0;
+    		margin-left: 65%;
     	}
 
     	button {
     		display: inline-block;
     		margin : 5%;    	
     	}
+
 		</style>
 	</head>
 	<body>
@@ -65,6 +84,10 @@
 				<a href='évènement.html' id="pb2">Nos évènements</a>
 			</div>
 			<div id="reste">
+				<div id="infoEvent">
+					<h1>Evénements</h1>
+					<p>La Taverne organise de nombreux événements au cours de l'année. Découvrez les plus récents.</p>
+				</div>
 			</div>
 		</main>
 		<footer>
@@ -79,14 +102,31 @@
 		</footer>
 	</body>
 	<script type="text/javascript">
-		var carousels = [{"name": "jdm_", "curr": 1, "max": 5}, {"name": "perudo_", "curr": 1, "max": 12}, {"name": "cdc_", "curr": 1, "max": 5}, {"name": "noel_", "curr": 1, "max": 2}, {"name": "aki_11_1_", "curr": 1, "max": 4}];
+		var carousels = [
+		{"name": "jdm_", "curr": 1, "max": 5, "description": "Chaque mois, l'équipe de la taverne vous propose de découvrir un jeu qui est mis en avant. S'il s'y prête, un mini-tournoi est organisé et les scores de chacun sont récupérés lors des différentes parties. Un vainqueur est ainsi désigné à la fin du mois. Le but est surtout de vous faire essayer des jeux auxquels vous n'auriez pas pensé. Ces derniers ont souvent un thème ou une mécanique de jeu particulière."},
+		{"name": "perudo_", "curr": 1, "max": 12, "description": "La Taverne a créée un tournoi autour du jeu que la plupart des gens connaissent grâce à 'pirates des Caraïbes' : le Perudo. Vous trouverez ici les photos de l'événement mais aussi les règles expliquées de façon simple et précise. Le jeu est présent à la Taverne, s'il vous tente, n'hésitez pas à le demander pour faire une partie : vous trouverez toujours des adversaires."},
+		{"name": "cdc_", "curr": 1, "max": 5, "description": "Voici les règles du cul de chouette utilisées à la Taverne. Ce jeu de dés à beaucoup de variantes et nous tenons à ce que les Taverniers puissent s'unifier sur les règles."},
+		{"name": "noel_", "curr": 1, "max": 2, "description": "Pour noël 2019, un événement à été mis en place sur un mois. Lors de ce dernier, les Taverniers pouvaient acheter une carte de jeux et participer à différentes activités. Ils pouvaient ensuite gagner un lot en fonction d'un lancer de dé (avec des bonus en fonction de leurs réussites aux activités). Il y avait aussi des barbes à papa. De plus, cet événement a permis de récolté des fonds pour le Téléthon."},
+		{"name": "aki_11_1_", "curr": 1, "max": 4, "description": "En décembre 2019, une fois encore, la Taverne du Troll était présente pour l'Aki party. Cette édition 11.1 s'est déroulé dans la plus grande convivialité et nos Tarveniers ont pu faire découvrir/redécouvrir des jeux de société sur le thème asiatique (Aki party oblige)."}];
+
 	let news = document.getElementById('reste');
 	var newDiv;
 	var divButtons;
 	var img;
 	for (var i = 0; i < carousels.length; i++) {
 		newDiv = document.createElement("div");
+
 		newDiv.classList.add("event");
+		for (var j = 1; j <= carousels[i].max; j++) {
+			img = document.createElement("img");
+			img.src = "events/" + carousels[i].name + j + ".jpg";
+			img.id = carousels[i].name + j;
+			img.classList.add("projectsvg");
+			if (j != 1)
+				img.classList.add("invisible");
+			newDiv.appendChild(img);
+		}
+
 		divButtons = document.createElement("div");
 		divButtons.classList.add("buttons");
 		var button = document.createElement("button");
@@ -100,15 +140,15 @@
   		button.onclick = function(){ next(this); };
   		divButtons.appendChild(button);
   		newDiv.appendChild(divButtons);
-		for (var j = 1; j <= carousels[i].max; j++) {
-			img = document.createElement("img");
-			img.src = "events/" + carousels[i].name + j + ".jpg";
-			img.id = carousels[i].name + j;
-			img.classList.add("projectsvg");
-			if (j != 1)
-				img.classList.add("invisible");
-			newDiv.appendChild(img);
-		}
+
+  		divDescri = document.createElement("div");
+		divDescri.classList.add("descri");
+		var descri = document.createElement("p");
+		descriContent = document.createTextNode(carousels[i].description);
+		descri.appendChild(descriContent);
+		divDescri.appendChild(descri);
+		newDiv.appendChild(divDescri);
+
 		news.appendChild(newDiv);
 	}
 
